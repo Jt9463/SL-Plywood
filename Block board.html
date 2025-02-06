@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product.css">
+    <title>Nice Ply - Block Board</title>
+    <style>
+        /* All previous styles remain exactly the same */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <main class="main-content">
+            <h1>Block Board</h1>
+            <p>Experience the perfect balance of strength and lightweight design with Nice Ply's Block Board. Ideal for furniture, partitions, and interior applications, our block board offers stability and durability while remaining easy to work with.</p>
+
+            <div class="image-container">
+                <img src="assests/blockboard.jpeg" alt="Premium Block Board" class="product-image" onclick="openLightbox(this)">
+            </div>
+
+            <div class="features">
+                <h2>Features of Our Block Board:</h2>
+                <div class="feature-item">
+                    <strong>Lightweight Construction</strong>
+                    <p>The core of our block board consists of lightweight wooden strips, making it easy to handle and install without compromising on strength.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Excellent Strength and Stability</strong>
+                    <p>Despite its lightweight nature, our block board offers exceptional strength and dimensional stability, making it ideal for load-bearing applications.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Smooth Surface Finish</strong>
+                    <p>The smooth surface of our block board provides an excellent base for veneers, laminates, or paint, ensuring a professional finish.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Versatile Applications</strong>
+                    <p>Perfect for furniture making, partitions, paneling, shelving, and other interior applications where strength and lightness are required.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Durable and Long-lasting</strong>
+                    <p>Manufactured with high-quality materials and adhesives, our block board is designed to withstand everyday use and maintain its integrity over time.</p>
+                </div>
+            </div>
+
+        </main>
+
+        <aside class="sidebar">
+            <h3>Our Products</h3>
+            <ul class="products-list">
+                <li><a href="Plywood.html">Premium Plywood</a></li>
+                <li><a href="Marine.html">Marine Plywood</a></li>
+                <li><a href="calibrated.html">Calibrated Plywood</a></li>
+                <li><a href="#">Block Board</a></li>
+                <li><a href="flushdoor.html">Flush Door</a></li>
+                <li><a href="Shuttering.html">Shuttering Plywood</a></li>
+            </ul>
+
+            <div class="cta-box">
+                <p>Discover the excellence of Nice Ply's premium plywood products. Crafted with precision and sustainability in mind, we're here to transform your building projects with the best in the industry.</p>
+                <a href="#" class="cta-button">Get A Quote →</a>
+            </div>
+        </aside>
+    </div>
+
+    <div class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img src="" alt="Fullsize Block Board Image">
+    </div>
+
+    <script>
+                // Function to open lightbox
+                function openLightbox(img) {
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+        }
+
+        // Function to close lightbox
+        function closeLightbox() {
+            const lightbox = document.querySelector('.lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close lightbox when pressing ESC key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Prevent lightbox image click from closing the lightbox
+        document.querySelector('.lightbox img').addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Previous styling remains the same -->
+<head>
+    <!-- All previous CSS remains exactly the same -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product.css">
+    <title>Nice Ply - Marine Grade Plywood</title>
+    <!-- All previous CSS styles remain exactly the same -->
+    <style>
+        /* All previous styles remain exactly the same */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <main class="main-content">
+            <h1>Marine Grade Plywood</h1>
+            <p>Experience the ultimate in water-resistant plywood technology with Nice Ply's premium marine-grade solutions. Engineered specifically for high-moisture environments, our marine plywood combines exceptional durability with superior craftsmanship to deliver unmatched performance in marine and outdoor applications.</p>
+            
+            <div class="image-container">
+                <img src="assests/marineply.jpeg" alt="Premium Marine Grade Plywood" class="product-image" onclick="openLightbox(this)">
+            </div>
+            
+            <div class="features">
+                <h2>Features of Our Marine Plywood:</h2>
+                <div class="feature-item">
+                    <strong>Superior Water Resistance</strong>
+                    <p>Crafted with specialized water-resistant adhesives and treated hardwood veneers, our marine plywood offers exceptional resistance to water, humidity, and weather exposure, making it perfect for marine and outdoor applications.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Premium Grade Construction</strong>
+                    <p>Each sheet is manufactured using carefully selected hardwood veneers, bonded with phenolic resins under high pressure and temperature, ensuring maximum strength and dimensional stability even in challenging environments.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Versatile Applications</strong>
+                    <p>Ideal for boat building, dock construction, outdoor furniture, marine interiors, and other high-moisture applications. Our marine plywood maintains its integrity and appearance in environments where standard plywood would fail.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Quality Certified</strong>
+                    <p>Meets and exceeds international marine-grade standards, with thorough quality testing for delamination resistance, moisture resistance, and structural integrity. Backed by comprehensive quality certifications and warranties.</p>
+                </div>
+            </div>
+        </main>
+        
+        <aside class="sidebar">
+            <h3>Our Products</h3>
+            <ul class="products-list">
+                <li><a href="Plywood.html">Premium Plywood</a></li>
+                <li><a href="#">Marine Plywood</a></li>
+                <li><a href="calibrated.html">Calibrated Plywood</a></li>
+                <li><a href="Block board.html">Block Board</a></li>
+                <li><a href="flushdoor.html">Flush Door</a></li>
+                <li><a href="Shuttering.html">Shuttering Plywood</a></li>
+            </ul>
+            
+            <div class="cta-box">
+                <p>Discover the excellence of Nice Ply's premium plywood products. Crafted with precision and sustainability in mind, we're here to transform your building projects with the best in the industry.</p>
+                <a href="#" class="cta-button">Get A Quote →</a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Lightbox container -->
+    <div class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img src="" alt="Fullsize Marine Plywood Image">
+    </div>
+
+    <!-- Previous JavaScript remains exactly the same -->
+    <script>
+              // Function to open lightbox
+              function openLightbox(img) {
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+        }
+
+        // Function to close lightbox
+        function closeLightbox() {
+            const lightbox = document.querySelector('.lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close lightbox when pressing ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Prevent lightbox image click from closing the lightbox
+        document.querySelector('.lightbox img').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+</html>

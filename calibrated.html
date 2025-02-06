@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product.css">
+    <title>Nice Ply - Calibrated Plywood</title>
+    <style>
+        /* All previous styles remain exactly the same */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <main class="main-content">
+            <h1>Calibrated Plywood</h1>
+            <p>Achieve the pinnacle of precision and efficiency with Nice Ply's Calibrated Plywood. Engineered for projects demanding exact uniformity and flawless surfaces, our calibrated plywood ensures seamless integration and superior results, every time.</p>
+
+            <div class="image-container">
+                <img src="assests/calibratedply.jpg" alt="Premium Calibrated Plywood" class="product-image" onclick="openLightbox(this)">
+            </div>
+
+            <div class="features">
+                <h2>Features of Our Calibrated Plywood:</h2>
+                <div class="feature-item">
+                    <strong>Uniform Thickness</strong>
+                    <p>Each sheet is meticulously calibrated to ensure consistent thickness across the entire surface, eliminating variations and reducing the need for adjustments during fabrication.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Smooth and Even Surface</strong>
+                    <p>The smooth and even surface of our calibrated plywood provides an ideal base for laminates, veneers, and finishes, ensuring a flawless final product.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Dimensional Stability</strong>
+                    <p>Manufactured with high-quality hardwood or poplar core and premium face veneers, our calibrated plywood offers excellent dimensional stability and resistance to warping or twisting.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Versatile Applications</strong>
+                    <p>Perfect for furniture manufacturing, cabinetry, interior paneling, and any application where precise dimensions and a smooth surface are essential.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Quality Assurance</strong>
+                    <p>Our calibrated plywood undergoes rigorous quality control measures to ensure it meets our exacting standards for thickness tolerance, surface quality, and structural integrity.</p>
+                </div>
+            </div>
+
+            </main>
+
+        <aside class="sidebar">
+            <h3>Our Products</h3>
+            <ul class="products-list">
+                <li><a href="Plywood.html">Premium Plywood</a></li>
+                <li><a href="Marine.html">Marine Plywood</a></li>
+                <li><a href="#">Calibrated Plywood</a></li>
+                <li><a href="Block board.html">Block Board</a></li>
+                <li><a href="flushdoor.html">Flush Door</a></li>
+                <li><a href="Shuttering.html">Shuttering Plywood</a></li>
+            </ul>
+
+            <div class="cta-box">
+                <p>Discover the excellence of Nice Ply's premium plywood products. Crafted with precision and sustainability in mind, we're here to transform your building projects with the best in the industry.</p>
+                <a href="#" class="cta-button">Get A Quote →</a>
+            </div>
+        </aside>
+    </div>
+
+    <div class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img src="" alt="Fullsize Calibrated Plywood Image">
+    </div>
+
+    <script>
+                // Function to open lightbox
+                function openLightbox(img) {
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+        }
+
+        // Function to close lightbox
+        function closeLightbox() {
+            const lightbox = document.querySelector('.lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close lightbox when pressing ESC key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Prevent lightbox image click from closing the lightbox
+        document.querySelector('.lightbox img').addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+
+</html>

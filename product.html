@@ -4,122 +4,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="footer.css">
     <style>
-        h1{
-            text-align: center;
-        }
-        header {
-            background: #fff;
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-        }
-        header .logo img {
-            height: 50px;
-        }
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
-        header nav ul li {
-            display: inline;
-        }
-        header nav ul li a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-        header nav ul li a:hover {
-            background-color: #f0f0f0;
-        }
+.products-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f5f5f5;
+}
+
+.products-section h2 {
+    font-size: 70px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.products-section h2 span {
+    color: teal;
+}
+
+/* Product Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Product Card */
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.product-card:hover {
+    transform: scale(1.05);  /* Enlarges the box */
+    background-color: #a6f3ef; /* Changes background color */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #444;
+    margin-top: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: teal;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #004d40;
+}
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="assests/silogo.png" alt="Centuryply Logo">
+    <header class="main-header">
+        <div class="header-logo">
+            <img src="assests/silogo.png" alt="SI Industries Logo">
         </div>
-        <nav>
+        <nav class="main-nav">
             <ul>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search..." aria-label="Search">
+                        <button type="submit">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="product.html">Products</a></li>
+                <li><a href="#">Products</a></li>
                 <li><a href="tools.html">Tools</a></li>
                 <li><a href="service.html">Services</a></li>
-                <li><a href="Faq.html">Contact Us</a></li>
+                <li><a href="Contact us.html">Contact us</a></li>
+                <li><a href="More.html">More</a></li>
             </ul>
-        </nav>
-    </header>
-    <h1> Our Products</h1>
-    <section class="product-section">
-        <div class="product-category">
-            <h2>Plywood</h2>
-            <ul>
-                <li><a href="https://varnagroup.com/waterproof-plywood/">Waterproof</a></li>
-                <li><a href="#">Water Resistant</a></li>
-                <li><a href="#">Made to Order</a></li>
-            </ul>
-        </div>
-        <div class="product-category">
-            <h2>Doors</h2>
-            <ul>
-                <li><a href="#">Flush Doors</a></li>
-                <li><a href="#">Panel Moulded Doors</a></li>
-                <li><a href="#">Decorative Doors</a></li>
-            </ul>
-        </div>
-        <div class="product-category">
-            <h2>Other Products</h2>
-            <ul>
-                <li><a href="#">MDF & Particle Board</a></li>
-                <li><a href="#">Polyvinyl Chloride</a></li>
-                <li><a href="#">WPC Boards</a></li>
-            </ul>
+        </nav>        
+      </header>
+
+<!--         Product start      -->   
+      <section class="products-section">
+        <h2>Our <span>Products</span></h2>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="assests/plywood.png" alt="Plywood">
+                <h3>Plywood</h3>
+                <p>Nice Plywood is crafted from the finest wood, offering strength, durability, and versatility.</p>
+                <a href="Plywood.html" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="assests/marineply.jpeg" alt="Marine Plywood">
+                <h3>Marine Plywood</h3>
+                <p>Engineered to withstand moisture, making it ideal for marine and exterior use.</p>
+                <a href="Marine.html" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="assests/calibratedply.jpg" alt="Calibrated Plywood">
+                <h3>Calibrated Plywood</h3>
+                <p>Precision-engineered for flawless, flat surfaces. Best for uniform thickness projects.</p>
+                <a href="calibrated.html" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="assests/blockboard.jpeg" alt="Block Board">
+                <h3>Block Board</h3>
+                <p>Perfect blend of aesthetics and strength, ideal for furniture, partitions, and interiors.</p>
+                <a href="Block board.html" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="assests/flushdoor.jpg" alt="Flush Door">
+                <h3>Flush Door</h3>
+                <p>Combines durability with aesthetics, providing security and longevity for interiors.</p>
+                <a href="flushdoor.html" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="assests/shutteringply.jpg" alt="Shuttering Plywood">
+                <h3>Shuttering Plywood</h3>
+                <p>The trusted choice for construction frameworks, offering durability and reliability.</p>
+                <a href="Shuttering.html" class="read-more">Read More →</a>
+            </div>
         </div>
     </section>
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- About Section -->
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>SI Industries is a leading manufacturer of plywood and related products. We deliver quality and innovation to your homes and offices.</p>
-            </div>
 
-            <!-- Social Media Links -->
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com" target="_blank" title="Instagram">
-                        <i>📷</i> <!-- Replace with Instagram logo -->
-                    </a>
-                    <a href="https://www.facebook.com" target="_blank" title="Facebook">
-                        <i>📘</i> <!-- Replace with Facebook logo -->
-                    </a>
-                    <a href="https://wa.me" target="_blank" title="WhatsApp">
-                        <i>📱</i> <!-- Replace with WhatsApp logo -->
-                    </a>
-                    <!-- Add more social media icons as needed -->
+<!--        PRODUCT END      -->
+
+
+        <!--    Footer start    -->
+        <footer class="si-footer">
+            <div class="si-footer-container">
+                <!-- About Section -->
+                <div class="si-footer-section">
+                    <h3>About Us</h3>
+                    <p>SI Industries is a leading manufacturer of plywood and related products. We deliver quality and innovation to your homes and offices.</p>
+                </div>
+    
+                <!-- Social Media Links -->
+                <div class="si-footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="si-social-icons">
+                        <a href="https://www.instagram.com" target="_blank" title="Instagram" class="si-social-icon instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" title="Facebook" class="si-social-icon facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="https://wa.me" target="_blank" title="WhatsApp" class="si-social-icon whatsapp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Quick Links -->
+                <div class="si-footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="si-footer-links">
+                        <a href="service.html">Our Services</a>
+                        <a href="#">Products</a>
+                        <a href="Contact us.html">Contact Us</a>
+                        <a href="Faq.html">FAQ</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Quick Links -->
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="service.html">Our Services</a><br>
-                <a href="product.html">Products</a><br>
-                <a href="Faq.html">Contact Us</a><br>
-                <a href="#faq">FAQ</a>
+    
+            <!-- Footer Bottom -->
+            <div class="si-footer-bottom">
+                <p>&copy; 2025 SI Industries. All Rights Reserved.</p>
             </div>
-        </div>
+        </footer>
+        <!--    FOOTER END      -->
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <p>&copy; 2025 SI Industries. All Rights Reserved.</p>
-        </div>
-    </footer>
+
+
 </body>
 </html>

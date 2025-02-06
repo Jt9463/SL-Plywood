@@ -4,6 +4,23 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+.enquiry-btn {
+    padding: 12px 20px;
+    background: #009688;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.enquiry-btn:hover {
+    background: #00796b;
+}
+
 header {
     background-color: #f88753;
     display: flex;
@@ -63,69 +80,87 @@ nav ul li a {
     text-align: center;
 }
 
-.hero {
-    background-image: url('assests/plywood.png'); 
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    color: rgb(130, 228, 118);
-    padding: 60px 20px;
-}
 
-.hero h1 {
-    font-size: 2.5em;
+.home-slider-container * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.hero p {
-    font-size: 1.2em;
-    margin: 10px 0 20px;
-}
-
-
-
-.slider {
+/* Main slider container */
+.home-slider-container {
     position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
+    width: 100vw;
+    height: 600px;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #e6f7f7;
 }
 
-.slides {
+/* Slides wrapper */
+.home-slider-wrapper {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
+    height: 100%;
+    animation: homeSliderSlide 35s infinite linear;
 }
 
-.slides img {
-    width: 100%;
+.home-slider-wrapper:hover {
+    animation-play-state: paused;
+}
+
+/* Animation for continuous sliding */
+@keyframes homeSliderSlide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-700%); /* Adjust based on number of slides */
+    }
+}
+
+/* Individual slide images */
+.home-slider-image {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
     flex-shrink: 0;
 }
 
-.navigation {
+/* Navigation dots container */
+.home-slider-dots {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: space-between;
-    z-index: 10;
+    gap: 10px;
+    z-index: 2;
 }
 
-.navigation button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 20px;
+/* Individual dot style */
+.home-slider-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid teal;
+    border-radius: 50%;
     cursor: pointer;
-    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.navigation button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+/* Active dot style */
+.home-slider-dot.active {
+    background-color: teal;
+}
+
+/* Gradient overlay for better visibility */
+.home-slider-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(transparent, rgba(0, 128, 128, 0.2));
+    pointer-events: none;
 }
 
 /**************************/
@@ -497,74 +532,6 @@ nav ul li a {
     }
 }
 
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-section {
-    flex: 1 1 200px;
-    margin: 10px;
-}
-
-.footer-section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #ff6f61;
-}
-
-.footer-section p, .footer-section a {
-    color: #ccc;
-    font-size: 14px;
-    line-height: 1.6;
-    text-decoration: none;
-}
-
-.footer-section a:hover {
-    color: white;
-}
-
-.social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: #444;
-    border-radius: 50%;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: background-color 0.3s;
-}
-
-.social-icons a:hover {
-    background-color: #ff6f61;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #555;
-}
-
 
 @media (max-width: 768px) {
     header {
@@ -585,16 +552,5 @@ nav ul li a {
 
     .navigation button {
         padding: 5px 10px;
-    }
-
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-section {
-        margin: 20px 0;
     }
 }

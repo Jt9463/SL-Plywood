@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product.css">
+    <title>Nice Ply - Flush Door</title>
+    <style>
+        /* All previous styles remain exactly the same */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <main class="main-content">
+            <h1>Flush Door</h1>
+            <p>Enhance the beauty and functionality of your interiors with Nice Ply's Flush Doors. Combining sleek design with robust construction, our flush doors offer privacy, security, and a touch of elegance to any space.</p>
+
+            <div class="image-container">
+                <img src="assests/flushdoor.jpg" alt="Premium Flush Door" class="product-image" onclick="openLightbox(this)">
+            </div>
+
+            <div class="features">
+                <h2>Features of Our Flush Doors:</h2>
+                <div class="feature-item">
+                    <strong>Smooth and Elegant Design</strong>
+                    <p>Our flush doors feature a clean and minimalist design, adding a touch of sophistication to any interior.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Durable Construction</strong>
+                    <p>Manufactured with high-quality plywood and a solid core, our flush doors are built to last, offering superior strength and stability.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Variety of Finishes</strong>
+                    <p>Choose from a range of finishes, including natural wood veneers, laminates, or paint-grade options, to match your interior décor.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Excellent Sound Insulation</strong>
+                    <p>The solid core construction of our flush doors provides excellent sound insulation, ensuring privacy and peace within your spaces.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Easy to Install and Maintain</strong>
+                    <p>Our flush doors are designed for easy installation and require minimal maintenance, making them a practical choice for any home or office.</p>
+                </div>
+            </div>
+
+        </main>
+
+        <aside class="sidebar">
+            <h3>Our Products</h3>
+            <ul class="products-list">
+                <li><a href="Plywood.html">Premium Plywood</a></li>
+                <li><a href="Marine.html">Marine Plywood</a></li>
+                <li><a href="calibrated.html">Calibrated Plywood</a></li>
+                <li><a href="Block board.html">Block Board</a></li>
+                <li><a href="#">Flush Door</a></li>
+                <li><a href="Shuttering.html">Shuttering Plywood</a></li>
+            </ul>
+
+            <div class="cta-box">
+                <p>Discover the excellence of Nice Ply's premium plywood products. Crafted with precision and sustainability in mind, we're here to transform your building projects with the best in the industry.</p>
+                <a href="#" class="cta-button">Get A Quote →</a>
+            </div>
+        </aside>
+    </div>
+
+    <div class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img src="" alt="Fullsize Flush Door Image">
+    </div>
+
+    <script>
+        // Function to open lightbox
+        function openLightbox(img) {
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+        }
+
+        // Function to close lightbox
+        function closeLightbox() {
+            const lightbox = document.querySelector('.lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close lightbox when pressing ESC key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Prevent lightbox image click from closing the lightbox
+        document.querySelector('.lightbox img').addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+
+</html>

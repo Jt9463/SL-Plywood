@@ -1,0 +1,113 @@
+.main-header {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .header-logo img {
+    height: 50px;
+    transition: transform 0.3s ease;
+  }
+  .header-logo img:hover {
+    transform: scale(1.05);
+  }
+  .main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  .search-container {
+    margin-right: 20px;
+  }
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 128, 128, 0.1);
+    border-radius: 25px;
+    padding: 5px;
+    transition: all 0.3s ease;
+  }
+  .search-bar:hover {
+    background: rgba(0, 128, 128, 0.2);
+  }
+  .search-bar input {
+    padding: 8px 15px;
+    border: none;
+    background: transparent;
+    color: #008080;
+    outline: none;
+    width: 200px;
+    font-size: 20px;
+  }
+  .search-bar input::placeholder {
+    color: rgba(0, 128, 128, 0.7);
+  }
+  .search-bar button {
+    background: none;
+    border: none;
+    color: #008080;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+    transition: all 0.3s ease;
+  }
+  .search-bar button:hover {
+    background: rgba(0, 128, 128, 0.1);
+  }
+  .main-nav ul li {
+    position: relative;
+  }
+  .main-nav ul li a {
+    text-decoration: none;
+    color: #008080;
+    font-weight: 700;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+  }
+  .main-nav ul li a:hover {
+    background: rgba(0, 128, 128, 0.1);
+    transform: translateY(-2px);
+  }
+  .main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #008080;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+  .main-nav ul li a:hover::after {
+    width: 70%;
+  }
+  /* For sticky header smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 968px) {
+    .main-header {
+        padding: 10px 15px;
+    }
+    
+    .main-nav ul {
+        gap: 15px;
+    }
+    
+    .search-bar input {
+        width: 150px;
+    }
+  }

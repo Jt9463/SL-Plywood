@@ -3,82 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SI Industries</title>
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="footer.css">
+    <title>SI Industries - FAQ</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1em 0;
-            text-align: center;
+
+        body {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0f2f1 100%);
+            min-height: 100vh;
         }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 1em;
-        }
-        nav a:hover {
-            background-color: #575757;
-        }
+
         .hero {
             text-align: center;
-            padding: 2em;
-            background-color: #f4f4f4;
+            padding: 3em 1em;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #009688 0%, #00796b 100%);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 150, 136, 0.2);
         }
+
         .hero h1 {
-            margin: 0.5em 0;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .faq-section {
+
+        .hero p {
+            font-size: 1.2em;
+            opacity: 0.9;
             max-width: 800px;
-            margin: 2em auto;
-            padding: 1em;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            line-height: 1.6;
         }
+
+        .faq-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2em;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 150, 136, 0.1);
+        }
+
+        .faq-section h2 {
+            color: #009688;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 1.5em;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .faq-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #009688, #4db6ac);
+            border-radius: 2px;
+        }
+
         .faq {
-            margin-bottom: 1em;
+            margin-bottom: 1.5em;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
         }
+
+        .faq:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 150, 136, 0.1);
+        }
+
         .faq h3 {
+            padding: 1.2em 3.5em 1.2em 1.5em;
             margin: 0;
             cursor: pointer;
-            background-color: #4CAF50;
-            padding: 0.5em;
-            border: 1px solid #ddd;
+            background-color: #fff;
+            color: #009688;
+            font-size: 1.1em;
+            position: relative;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
         }
+
+        .faq h3:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq h3::after {
+            content: '+';
+            position: absolute;
+            right: 1.5em;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4em;
+            color: #009688;
+            transition: all 0.3s ease;
+        }
+
+        .faq.active h3::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
         .faq p {
             margin: 0;
-            padding: 0.5em;
-            display: none;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background-color: white;
+            color: #555;
+            line-height: 1.6;
         }
-        footer {
-            text-align: center;
-            padding: 1em 0;
-            background-color: #333;
-            color: white;
+
+        .faq.active p {
+            padding: 1.5em;
+            max-height: 200px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .faq.active h3 {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* Animation for content */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .faq p {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2em 1em;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .faq-section {
+                padding: 1.5em;
+            }
+
+            .faq h3 {
+                padding: 1em 3em 1em 1em;
+                font-size: 1em;
+            }
+
+            .faq p {
+                padding: 1em;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to SI Industries</h1>
-        <p>Quality plywood for all your needs</p>
-    </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="tools.html">Tools</a>
-        <a href="product.html">Products</a>
-        <a href="Contact us.html">Contact</a>
-    </nav>
+
+    <header class="main-header">
+        <div class="header-logo">
+            <img src="assests/silogo.png" alt="SI Industries Logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search..." aria-label="Search">
+                        <button type="submit">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="Contact us.html">Contact us</a></li>
+                <li><a href="More.html">More</a></li>
+            </ul>
+        </nav>        
+      </header>
+
 
     <div class="hero">
         <h1>Your One-Stop Shop for Premium Plywood</h1>
@@ -90,34 +214,94 @@
 
         <div class="faq">
             <h3>What types of plywood do you offer?</h3>
-            <p>We offer a variety of plywood including marine, commercial, and hardwood plywood.</p>
+            <p>We offer a comprehensive range of plywood including marine grade, commercial grade, decorative, and hardwood plywood. Our selection includes various thicknesses and wood types to suit different applications, from furniture making to construction projects.</p>
         </div>
 
         <div class="faq">
             <h3>What is the standard size of your plywood sheets?</h3>
-            <p>Our plywood sheets are typically 8x4 feet, but custom sizes are available upon request.</p>
+            <p>Our standard plywood sheets come in 8x4 feet dimensions. However, we understand that projects may require different specifications, so we also offer custom sizing options to meet your specific requirements. Contact our team for custom size inquiries.</p>
         </div>
 
         <div class="faq">
             <h3>Do you provide delivery services?</h3>
-            <p>Yes, we offer delivery services across the country for your convenience.</p>
+            <p>Yes, we offer comprehensive delivery services across the country. Our delivery network ensures safe and timely delivery of your orders. We also provide tracking information so you can monitor your delivery status in real-time. Bulk orders may qualify for special delivery rates.</p>
         </div>
 
         <div class="faq">
             <h3>How can I place an order?</h3>
-            <p>You can place an order through our website or by contacting our sales team directly.</p>
+            <p>Ordering is simple! You can place your order through our website's online ordering system, email our sales team, or call us directly. For bulk orders or special requirements, we recommend speaking with our sales team who can provide personalized assistance and quotes.</p>
+        </div>
+
+        <div class="faq">
+            <h3>What is your quality assurance process?</h3>
+            <p>Each piece of plywood undergoes rigorous quality checks at multiple stages. We ensure moisture content, structural integrity, and surface quality meet our high standards. All our products comply with industry regulations and come with appropriate certification.</p>
+        </div>
+
+        <div class="faq">
+            <h3>Do you offer warranty on your products?</h3>
+            <p>Yes, all our plywood products come with a manufacturer's warranty against defects in material and workmanship. The warranty period varies by product type. Please check the specific product details or contact our customer service for more information.</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Plywood World. All rights reserved.</p>
+    <!--    Footer start    -->
+    <footer class="si-footer">
+        <div class="si-footer-container">
+            <!-- About Section -->
+            <div class="si-footer-section">
+                <h3>About Us</h3>
+                <p>SI Industries is a leading manufacturer of plywood and related products. We deliver quality and innovation to your homes and offices.</p>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="si-footer-section">
+                <h3>Follow Us</h3>
+                <div class="si-social-icons">
+                    <a href="https://www.instagram.com" target="_blank" title="Instagram" class="si-social-icon instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook" class="si-social-icon facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://wa.me" target="_blank" title="WhatsApp" class="si-social-icon whatsapp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="si-footer-section">
+                <h3>Quick Links</h3>
+                <div class="si-footer-links">
+                    <a href="service.html">Our Services</a>
+                    <a href="product.html">Products</a>
+                    <a href="Contact us.html">Contact Us</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="si-footer-bottom">
+            <p>&copy; 2025 SI Industries. All Rights Reserved.</p>
+        </div>
     </footer>
+    <!--    FOOTER END      -->
 
     <script>
         document.querySelectorAll('.faq h3').forEach(question => {
             question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                const faq = question.parentElement;
+                const isActive = faq.classList.contains('active');
+                
+                // Close all FAQs
+                document.querySelectorAll('.faq').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked FAQ if it wasn't active
+                if (!isActive) {
+                    faq.classList.add('active');
+                }
             });
         });
     </script>

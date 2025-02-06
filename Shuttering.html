@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product.css">
+    <title>Nice Ply - Shuttering Plywood</title>
+    <style>
+        /* All previous styles remain exactly the same */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <main class="main-content">
+            <h1>Shuttering Plywood</h1>
+            <p>Build with confidence using Nice Ply's Shuttering Plywood. Engineered for the rigors of concrete formwork, our shuttering plywood offers exceptional strength, durability, and reusability, ensuring smooth and efficient construction.</p>
+
+            <div class="image-container">
+                <img src="assests/shutteringply.jpg" alt="Premium Shuttering Plywood" class="product-image" onclick="openLightbox(this)">
+            </div>
+
+            <div class="features">
+                <h2>Features of Our Shuttering Plywood:</h2>
+                <div class="feature-item">
+                    <strong>High Strength and Durability</strong>
+                    <p>Our shuttering plywood is constructed from hardwood core veneers and bonded with high-strength phenolic resins, providing exceptional load-bearing capacity and resistance to deformation.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Excellent Reusability</strong>
+                    <p>Designed to withstand multiple uses in concrete formwork, our shuttering plywood can be reused numerous times, making it a cost-effective choice for construction projects.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Smooth Surface Finish</strong>
+                    <p>The smooth surface of our shuttering plywood ensures a fair-faced concrete finish, reducing the need for additional finishing work.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Water and Weather Resistance</strong>
+                    <p>Treated to resist moisture and weathering, our shuttering plywood maintains its integrity even in harsh construction environments.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Dimensional Stability</strong>
+                    <p>Our shuttering plywood offers excellent dimensional stability, minimizing warping or twisting and ensuring accurate formwork construction.</p>
+                </div>
+            </div>
+
+        </main>
+
+        <aside class="sidebar">
+            <h3>Our Products</h3>
+            <ul class="products-list">
+                <li><a href="Plywood.html">Premium Plywood</a></li>
+                <li><a href="Marine.html">Marine Plywood</a></li>
+                <li><a href="calibrated.html">Calibrated Plywood</a></li>
+                <li><a href="Block board.html">Block Board</a></li>
+                <li><a href="flushdoor.html">Flush Door</a></li>
+                <li><a href="#">Shuttering Plywood</a></li>
+            </ul>
+
+            <div class="cta-box">
+                <p>Discover the excellence of Nice Ply's premium plywood products. Crafted with precision and sustainability in mind, we're here to transform your building projects with the best in the industry.</p>
+                <a href="#" class="cta-button">Get A Quote →</a>
+            </div>
+        </aside>
+    </div>
+
+    <div class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img src="" alt="Fullsize Shuttering Plywood Image">
+    </div>
+
+    <script>
+        // Function to open lightbox
+        function openLightbox(img) {
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+        }
+
+        // Function to close lightbox
+        function closeLightbox() {
+            const lightbox = document.querySelector('.lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close lightbox when pressing ESC key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Prevent lightbox image click from closing the lightbox
+        document.querySelector('.lightbox img').addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+
+</html>

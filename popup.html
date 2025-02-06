@@ -5,125 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enquire Now</title>
     <style>
-        /* Popup Style */
-        
-    .popup-box {
-        padding: 15px;
-        font-family: Arial, sans-serif;
-    }
-    .popup-close {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        font-size: 16px;
-        cursor: pointer;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
 
         .popup-overlay {
             position: fixed;
-            top: 20px;
-            right: 0;
-            width: 350px;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
-            height: calc(90% - 70px); /* Subtract the navbar height */
-            margin-top: 70px; /* Start below the navbar */
-            background: rgba(255, 255, 255, 1);
-            display: flex;
+            background: rgba(0, 0, 0, 0.4);
+            display: none;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
         }
 
         .popup-box {
             background: #fff;
-            width: 300px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            font-family: Arial, sans-serif;
+            width: 380px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 150, 136, 0.1);
             position: relative;
+            border: 1px solid rgba(0, 150, 136, 0.1);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background: #e0f2f1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #009688;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background: #009688;
+            color: white;
         }
 
         .popup-box h2 {
-            margin: 0 0 10px;
-            font-size: 20px;
             text-align: center;
+            color: #009688;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
         }
 
         .popup-box form input,
         .popup-box form select,
         .popup-box form textarea {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
             font-size: 14px;
-        }
-
-        .popup-box form input[type="checkbox"] {
-            width: auto;
-            margin-right: 5px;
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
         }
 
         .popup-box button {
             width: 100%;
-            padding: 10px;
-            background-color: #e53935;
+            padding: 12px;
+            background: #009688;
             color: white;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: 8px;
             font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
         .popup-box button:hover {
-            background-color: #d32f2f;
-        }
-
-        .popup-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
-            color: #888;
-            cursor: pointer;
+            background: #00796b;
         }
     </style>
 </head>
 <body>
+
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-box">
             <span class="popup-close" id="popupClose">&times;</span>
             <h2>Enquire Now</h2>
-            <form>
-                <input type="text" placeholder="Name" required>
-                <input type="tel" placeholder="Phone Number" required>
-                <input type="email" placeholder="Email" required>
-                <select required>
-                    <option value="" disabled selected>Select State</option>
-                    <option value="State1">State 1</option>
-                    <option value="State2">State 2</option>
-                </select>
-                <select required>
-                    <option value="" disabled selected>Select City</option>
-                    <option value="City1">City 1</option>
-                    <option value="City2">City 2</option>
-                </select>
-                <textarea rows="4" placeholder="Message" required></textarea>
-                <label><input type="checkbox" required> You are giving us consent to call you back</label>
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="" disabled selected>Select Your State</option>
+                        <option value="State1">State 1</option>
+                        <option value="State2">State 2</option>
+                        <option value="State3">State 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="" disabled selected>Select Your City</option>
+                        <option value="City1">City 1</option>
+                        <option value="City2">City 2</option>
+                        <option value="City3">City 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" required></textarea>
+                </div>
                 <button type="submit">Get OTP</button>
             </form>
         </div>
     </div>
 
     <script>
-        // Add event listener for the close button
-        const popupClose = document.getElementById('popupClose');
-        popupClose.addEventListener('click', function () {
-            window.parent.postMessage('closePopup', '*'); // Send a message to the parent to close the popup
+        document.getElementById('popupClose').addEventListener('click', function() {
+            document.getElementById('popupOverlay').style.display = 'none';
+        });
+
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('OTP Sent Successfully!');
         });
     </script>
+
 </body>
 </html>

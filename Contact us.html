@@ -3,162 +3,513 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="footer.css">
+    <iframe src="popup.html" id="popupIframe" style="display:none; position:fixed; top:0; right:0; width:350px; height:100%; border:none; z-index:9999;"></iframe> 
     <title>Contact Us - SI Industries</title>
     <style>
-        body {
-            background-color: #c9f1a9;
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
-        header {
-            background: #f7f7f7;
-            padding: 20px;
-            text-align: center;
+
+        body {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0f2f1 100%);
+            min-height: 100vh;
         }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #333;
-        }
+
         .container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+            position: relative;
         }
-        .section {
-            margin: 40px 0;
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: rgba(0, 150, 136, 0.05);
+            border-radius: 16px;
+            z-index: -1;
         }
-        .customer-care, .contact-info, .social-address, .contact-form, .vendor-registration {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
+
+        .contact-info {
+            background-color: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 150, 136, 0.1);
+            border: 1px solid rgba(0, 150, 136, 0.1);
+            transition: transform 0.3s ease;
         }
-        .contact-info, .social-address {
+
+        .contact-info:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 3px solid #009688;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            border-left-color: #00796b;
+            padding-left: 25px;
+        }
+
+        .info-item h3 {
+            color: #009688;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 600;
             display: flex;
-            justify-content: space-between;
+            align-items: center;
         }
-        .contact-info div, .social-address div {
-            flex: 1;
-            margin: 0 10px;
+
+        .info-item h3::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #009688;
+            border-radius: 50%;
+            margin-right: 10px;
         }
-        .contact-form form, .vendor-registration {
-            text-align: center;
+
+        .info-item p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 15px;
         }
-        .contact-form input, .contact-form select, .contact-form textarea {
+
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 150, 136, 0.1);
+            border: 1px solid rgba(0, 150, 136, 0.1);
+        }
+
+        .form-title {
+            color: #009688;
+            margin-bottom: 30px;
+            font-size: 28px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .form-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #009688, #4db6ac);
+            border-radius: 2px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-control {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
         }
-        .contact-form button {
-            padding: 10px 20px;
+
+        .form-control:focus {
+            border-color: #009688;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(0, 150, 136, 0.1);
+            background-color: white;
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23009688' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 15px;
+            padding-right: 45px;
+        }
+
+        textarea.form-control {
+            height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #009688 0%, #00796b 100%);
+            color: white;
+            padding: 16px 40px;
             border: none;
-            background: red;
-            color: white;
-            font-size: 1em;
+            border-radius: 8px;
             cursor: pointer;
-            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 150, 136, 0.2);
+            width: 100%;
+            text-transform: uppercase;
         }
-        footer {
-            background: #333;
-            color: white;
-            padding: 20px;
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #00796b 0%, #00695c 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 150, 136, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Loading animation for form submission */
+        .loading {
+            position: relative;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin: -10px 0 0 -10px;
+            border: 3px solid #ffffff;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .success-message {
+            display: none;
+            background-color: #e0f2f1;
+            color: #00796b;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
             text-align: center;
+            font-weight: 500;
         }
-        footer .social-icons {
-            margin-top: 10px;
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .contact-info, .contact-form {
+                padding: 25px;
+            }
         }
-        footer .social-icons a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 1.2em;
+
+        /* Floating labels animation */
+        .form-group {
+            position: relative;
         }
-        footer .social-icons a:hover {
-            color: #ccc;
+
+        .form-control::placeholder {
+            color: transparent;
+        }
+
+        .form-control:placeholder-shown + .form-label {
+            font-size: 15px;
+            cursor: text;
+            top: 14px;
+        }
+
+        .form-label {
+            position: absolute;
+            top: -10px;
+            left: 12px;
+            display: block;
+            transition: 0.2s;
+            font-size: 12px;
+            color: #009688;
+            background-color: white;
+            padding: 0 5px;
+        }
+
+        .form-control:focus {
+            padding-bottom: 6px;
+            border-width: 2px;
+            border-color: #009688;
+        }
+
+        .form-control:focus + .form-label {
+            position: absolute;
+            top: -10px;
+            display: block;
+            transition: 0.2s;
+            font-size: 12px;
+            color: #009688;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Contact Us</h1>
-    </header>
 
-    <div class="container">
-        
-        <div class="section customer-care">
-            <h2>Customer Care</h2>
-            <p><strong>Toll Free:</strong> 1800-5722-122</p>
-            <p><strong>SMS:</strong> CPIL to 56070</p>
+    <header class="main-header">
+        <div class="header-logo">
+            <img src="assests/silogo.png" alt="SI Industries Logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search..." aria-label="Search">
+                        <button type="submit">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="More.html">More</a></li>
+            </ul>
+        </nav>        
+      </header>
+
+   
+      <div class="container">
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <div class="info-item">
+                <h3>Manufacturing Address</h3>
+                <p>Halister Road Dr Sugar Mill,<br>
+                Ghaziapur Uttar Bayer - 266225<br>
+                (U.P) India</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Sales Office</h3>
+                <p>229 2nd Floor Sector-1<br>
+                LCI Noida 201301 (U.P) India</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Call Us</h3>
+                <p>+91 9837128315<br>
+                +91 9837315316<br>
+                +91 8650007139</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Email Us</h3>
+                <p>info@totalplywood.com</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Office Open</h3>
+                <p>Monday - Sunday (10AM - 6PM)<br>
+                Tuesday (Closed)</p>
+            </div>
         </div>
 
-        
-        <div class="section contact-info">
-            <div>
-                <h2>Contact Information</h2>
-                <p><strong>Address:</strong> Century House, P15/1, Taratala Road, Kolkata, West Bengal, 700088</p>
-                <p><strong>Phone:</strong> +91 033 3940 3950</p>
-                <p><strong>Email:</strong> <a href="mailto:customerhelpdesk@centuryply.com">SIindustries@gmail.com</a></p>
-            </div>
-            <div>
-                <h2>Map</h2>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.057807037135!2d88.30345091495658!3d22.531339685197554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277df94f6a1bb%3A0xa35be9757688108d!2sCentury%20House!5e0!3m2!1sen!2sin!4v1615472137148!5m2!1sen!2sin"
-                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2 class="form-title">Get In Touch</h2>
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Name" required>
+                        <label for="name" class="form-label">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        <label for="email" class="form-label">Email</label>
+                    </div>
+                </div>
 
-        <!-- Social Address Section -->
-        <div class="section social-address">
-            <div>
-                <h2>Social Address</h2>
-                <p>
-                    <a href="#">Facebook</a> | 
-                    <a href="#">Instagram</a> | 
-                    <a href="#">LinkedIn</a>
-                </p>
-            </div>
-        </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" class="form-control" id="phone" placeholder="Phone" required>
+                        <label for="phone" class="form-label">Phone</label>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="product" required>
+                            <option value="">Select Product</option>
+                            <option value="product1">Product 1</option>
+                            <option value="product2">Product 2</option>
+                            <option value="product3">Product 3</option>
+                        </select>
+                        <label for="product" class="form-label">Product</label>
+                    </div>
+                </div>
 
-        <!-- Contact Form Section -->
-        <div class="section contact-form">
-            <h2>Get in Touch with Us</h2>
-            <form>
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="text" name="mobile" placeholder="Mobile Number" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <select name="state">
-                    <option value="">Select State</option>
-                    <option value="State1">State 1</option>
-                </select>
-                <select name="city">
-                    <option value="">Select City</option>
-                    <option value="City1">City 1</option>
-                </select>
-                <textarea name="comment" placeholder="Comment" rows="4"></textarea>
-                <button type="submit">Send</button>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="city" placeholder="City" required>
+                    <label for="city" class="form-label">City</label>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-control" id="state" required>
+                        <option value="">Select State</option>
+                        <option value="state1">State 1</option>
+                        <option value="state2">State 2</option>
+                        <option value="state3">State 3</option>
+                    </select>
+                    <label for="state" class="form-label">State</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Message" required></textarea>
+                    <label for="message" class="form-label">Message</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+                <div class="success-message">Thank you! Your message has been sent successfully.</div>
             </form>
-        </div>
-
-        <!-- Vendor Registration Section -->
-        <div class="section vendor-registration">
-            <h2>Vendor Registration</h2>
-            <p>Share your details & our team will get in touch with you.</p>
-            <button>Register Now</button>
         </div>
     </div>
 
-    <footer>
-        <p>© Copyright 2025 - SI Industries. All Rights Reserved | Terms & Conditions | Privacy Policy</p>
-        <div class="social-icons">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Instagram</a>
-            <a href="#">YouTube</a>
+      
+
+    <!--    Footer start    -->
+    <footer class="si-footer">
+        <div class="si-footer-container">
+            <!-- About Section -->
+            <div class="si-footer-section">
+                <h3>About Us</h3>
+                <p>SI Industries is a leading manufacturer of plywood and related products. We deliver quality and innovation to your homes and offices.</p>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="si-footer-section">
+                <h3>Follow Us</h3>
+                <div class="si-social-icons">
+                    <a href="https://www.instagram.com" target="_blank" title="Instagram" class="si-social-icon instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook" class="si-social-icon facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://wa.me" target="_blank" title="WhatsApp" class="si-social-icon whatsapp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="si-footer-section">
+                <h3>Quick Links</h3>
+                <div class="si-footer-links">
+                    <a href="service.html">Our Services</a>
+                    <a href="product.html">Products</a>
+                    <a href="Contact us.html">Contact Us</a>
+                    <a href="Faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="si-footer-bottom">
+            <p>&copy; 2025 SI Industries. All Rights Reserved.</p>
         </div>
     </footer>
+    <!--    FOOTER END      -->
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const button = this.querySelector('.submit-btn');
+            const successMessage = this.querySelector('.success-message');
+            
+            // Add loading state
+            button.classList.add('loading');
+            button.textContent = 'Sending...';
+            
+            // Simulate form submission
+            setTimeout(() => {
+                button.classList.remove('loading');
+                button.textContent = 'Send Message';
+                successMessage.style.display = 'block';
+                this.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 2000);
+        });
+
+        // Floating label behavior
+        document.querySelectorAll('.form-control').forEach(element => {
+            element.addEventListener('blur', function() {
+                if (this.value) {
+                    this.classList.add('filled');
+                } else {
+                    this.classList.remove('filled');
+                }
+            });
+        });
+
+
+        //pop up//
+        function loadPopup() {
+            fetch('popup.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('popupContainer').innerHTML = data;
+                    document.getElementById('popupOverlay').style.display = 'flex';
+
+                    // Attach event listener for closing the popup
+                    document.getElementById('popupClose').addEventListener('click', function() {
+                        document.getElementById('popupOverlay').style.display = 'none';
+                    });
+                })
+                .catch(error => console.error('Error loading popup:', error));
+        }
+
+        // Load popup when the page loads
+        window.onload = () => {
+            loadPopup();
+
+            // Set interval to open popup every 30 seconds
+            setInterval(loadPopup, 30000);
+        };
+        
+    </script>
 </body>
 </html>
