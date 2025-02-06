@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plywood Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f8f8f8;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .main-content {
+      flex: 3;
+      margin-right: 20px;
+    }
+
+    .sidebar {
+      flex: 1;
+      max-width: 25%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h3 {
+      font-size: 1.5rem;
+      color: #0ca789;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .product-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      padding: 10px;
+      background-color: #e8f6f3;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-card img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #0ca789;
+    }
+
+    .product-card a {
+      text-decoration: none;
+      color: #0ca789;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .product-card a:hover {
+      color: #09906b;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .main-content {
+        margin-right: 0;
+      }
+
+      .sidebar {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="main-content">
+      <!-- Main Content Section -->
+    </div>
+
+    <div class="sidebar">
+      <h3>Other Products</h3>
+      <div class="product-card">
+        <img src="marine-plywood.jpg" alt="Marine Plywood">
+        <a href="#">Marine Plywood</a>
+      </div>
+      <div class="product-card">
+        <img src="calibrated-plywood.jpg" alt="Calibrated Plywood">
+        <a href="#">Calibrated Plywood</a>
+      </div>
+      <div class="product-card">
+        <img src="block-board.jpg" alt="Block Board">
+        <a href="#">Block Board</a>
+      </div>
+      <div class="product-card">
+        <img src="flush-door.jpg" alt="Flush Door">
+        <a href="#">Flush Door</a>
+      </div>
+      <div class="product-card">
+        <img src="shuttering-plywood.jpg" alt="Shuttering Plywood">
+        <a href="#">Shuttering Plywood</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

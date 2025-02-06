@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SI Industries - Leading Plywood Manufacturer</title>
+    <link href="index.css" rel="stylesheet">
+    <iframe src="popup.html" id="popupIframe" style="display:none; position:fixed; top:0; right:0; width:350px; height:100%; border:none; z-index:9999;"></iframe>
+
+
+        <script>
+            // Function to handle showing and hiding the popup
+            function loadPopup() {
+                const popupIframe = document.getElementById('popupIframe');
+                popupIframe.style.display = 'block';
+    
+                // Listen for the close message from the iframe
+                window.addEventListener('message', function (event) {
+                    if (event.data === 'closePopup') {
+                        popupIframe.style.display = 'none'; // Hide the popup
+                        // Set a timer to reopen the popup after 5 seconds
+                        setTimeout(() => {
+                            popupIframe.style.display = 'block';
+                        }, 5000);
+                    }
+                });
+            }
+    
+            // Show popup on page load
+            window.onload = loadPopup;
+        </script>
+
+</head>
+<body>
+    <header>
+        <img src="assests/silogo.png" alt="SI Industries Logo">
+        <nav>
+            <ul>
+                <div class="search-bar" >
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                    <button type="submit">Search</button>
+                </div>
+                <li><a href="#">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="Faq.html">Contact us</a></li>
+                <li><a href="More.html">More</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    <div class="hero">
+        <h1>Welcome to SI Industries</h1>
+        <p>Leading the way in plywood manufacturing.</p>
+    </div>
+
+    <div class="slider">
+        <div class="slides" id="slides">
+            <img src="assests/slide1.jpg" alt="Slide 1">
+            <img src="assests/slide2.jpg" alt="Slide 2">
+            <img src="assests/slide3.jpg" alt="Slide 3">
+            <img src="assests/slide3.jpg" alt="Slide 3">
+            <img src="assests/slide3.jpg" alt="Slide 3">
+            <img src="assests/slide3.jpg" alt="Slide 3">
+            <img src="assests/slide3.jpg" alt="Slide 3">
+        </div>
+        <div class="navigation">
+            <button id="prev">&#10094; Prev</button>
+            <button id="next">Next &#10095;</button>
+        </div>
+    </div>
+
+    <!-- #region -->
+    <div class="welcome-section">
+        <div class="welcome-image">
+          <img src="assests/Lcd panel1.jpg" alt="Kitchen Design">
+          <div class="experience-box">
+            25+ <br> Years of Experience
+          </div>
+        </div>
+        <div class="welcome-content">
+          <h1 class="welcome-title">Welcome To <span>Nice Ply</span></h1>
+          <p class="welcome-subtitle">"Ply Ho, Toh Nice Ho"</p>
+          <p class="welcome-description">
+            At NicePly, we redefine strength through innovation. Our seasoned team pioneers material science with cutting-edge solutions. Quality is our cornerstone, and sustainability drives us. From construction to engineering, we offer tailored, trusted products globally.
+          </p>
+          <ul class="welcome-points">
+            <li>Unmatched Innovation: NicePly pioneers materials that surpass expectations.</li>
+            <li>Sustainability at Heart: We're dedicated to eco-friendly solutions for a greener world.</li>
+            <li>Customer-Centric Focus: Your success is our top priority, ensuring satisfaction at every step.</li>
+          </ul>
+          <a href="#" class="discover-more">Discover More</a>
+        </div>
+      </div>
+    <!-- #region -->
+
+    <div class="heading"><h2>Tools for <span style="color: teal;">Dream Spaces</span></h2></div>
+    <section class="products-section">
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="assests/calculator.webp" alt="Calculator" height="50%" width="-50%">
+                <h3>Calculator</h3>
+                <p>Save time, reduce waste, and ensure precise measurements!"</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="assests/visualizer.webp" alt="Visualizer" height="100%" width="100%">
+                <h3>Visualizer</h3>
+                <p>Explore designs effortlessly and make confident choices for your project!"</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="assests/color card.webp" alt="color card" height="100%" width="100%">
+                <h3>Shade Card</h3>
+                <p>perfect shade to match your design vision effortlessly</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <!--    Video   -->
+    <div class="heading"><h2>Glance of <span style="color: teal;">Nice Ply</span></h2></div>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tfwPAjo6Hjg?si=ziaaFONG_Fgyk5xZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <!--    video end    -->
+
+    <section class="products-section">
+        <h2>Our <span>Products</span></h2>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="assests/plywood.png" alt="Plywood">
+                <h3>Plywood</h3>
+                <p>Nice Plywood is crafted from the finest wood, offering strength, durability, and versatility.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="assests/marineply.jpeg" alt="Marine Plywood">
+                <h3>Marine Plywood</h3>
+                <p>Engineered to withstand moisture, making it ideal for marine and exterior use.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="assests/calibratedply.jpg" alt="Calibrated Plywood">
+                <h3>Calibrated Plywood</h3>
+                <p>Precision-engineered for flawless, flat surfaces. Best for uniform thickness projects.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="assests/blockboard.jpeg" alt="Block Board">
+                <h3>Block Board</h3>
+                <p>Perfect blend of aesthetics and strength, ideal for furniture, partitions, and interiors.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="assests/flushdoor.jpg" alt="Flush Door">
+                <h3>Flush Door</h3>
+                <p>Combines durability with aesthetics, providing security and longevity for interiors.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="assests/shutteringply.jpg" alt="Shuttering Plywood">
+                <h3>Shuttering Plywood</h3>
+                <p>The trusted choice for construction frameworks, offering durability and reliability.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!--    BRANDS -->
+    <section class="brands-section">
+        <h2>Our <span>Brands</span></h2>
+        <div class="brands-grid">
+            <!-- Brand 1 -->
+            <a href="assests/plylook.png" class="brand-card">
+                <img src="assests/Brand1.png" alt="Antik Ply">
+                <p>Premium Plywood</p>
+            </a>
+
+            <!-- Brand 2 -->
+            <a href="assests/plylook.png" class="brand-card">
+                <img src="assests/brand2.png" alt="Millennium Gold">
+                <p>Standard Plywood</p>
+            </a>
+
+            <!-- Brand 3 -->
+            <a href="assests/plylook.png" class="brand-card">
+                <img src="assests/brand3.png" alt="Red Premium">
+                <p>Economy Plywood</p>
+            </a>
+        </div>
+    </section>
+    <!--    BRANDS END-->
+
+    <section class="why-choose-us">
+        <div class="image">
+            <img src="assests/why choose us.jpg" alt="Kitchen design">
+        </div>
+        <div class="content">
+            <h2>Why Choose Us</h2>
+            <ul>
+                <li><strong>Expertise:</strong> Our seasoned team is dedicated to excellence and innovation.</li>
+                <li><strong>Quality Assurance:</strong> Reliability is our non-negotiable standard.</li>
+                <li><strong>Sustainability Focus:</strong> We’re eco-friendly and align with your sustainability goals.</li>
+                <li><strong>Versatile Applications:</strong> Tailored solutions for various industries.</li>
+                <li><strong>Customer-Centric:</strong> Your success is our priority.</li>
+                <li><strong>Building a Stronger Tomorrow:</strong> Invest in strength, invest in the future.</li>
+            </ul>
+            <button>Get a Quote</button>
+        </div>
+    </section>
+
+
+    <!-- Client Feedback Section -->
+    <div class="client-feedback-container">
+        <iframe src="feedback-section.html" width="100%" height="600px" style="border: none;"></iframe>
+    </div>
+    
+     <!-- Client Feedback Section -->
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>SI Industries is a leading manufacturer of plywood and related products. We deliver quality and innovation to your homes and offices.</p>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                        <i>📷</i> <!-- Replace with Instagram logo -->
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                        <i>📘</i> <!-- Replace with Facebook logo -->
+                    </a>
+                    <a href="https://wa.me" target="_blank" title="WhatsApp">
+                        <i>📱</i> <!-- Replace with WhatsApp logo -->
+                    </a>
+                    <!-- Add more social media icons as needed -->
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="service.html">Our Services</a><br>
+                <a href="product.html">Products</a><br>
+                <a href="Contact us.html">Contact Us</a><br>
+                <a href="Faq.html">FAQ</a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 SI Industries. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const slides = document.getElementById('slides');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        let currentIndex = 0;
+        const totalSlides = slides.children.length;
+
+        function showSlide(index) {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+            showSlide(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+            showSlide(currentIndex);
+        });
+
+        // Optional: Auto-slide every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+            showSlide(currentIndex);
+        }, 5000);
+
+    </script>
+</body>
+</html>

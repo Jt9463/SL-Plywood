@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - SI PLY</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background: #fff;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+        header .logo img {
+            height: 50px;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        header nav ul li {
+            display: inline;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        header nav ul li a:hover {
+            background-color: #f0f0f0;
+        }
+        header {
+            background: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        header img {
+            height: 50px;
+        }
+        header .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        header .buttons button {
+            background-color: rgb(140, 215, 28);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        header .buttons button:hover {
+            background-color:  rgb(140, 215, 28);
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(140, 215, 28);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .hero button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .hero button:hover {
+            background-color: #333;
+        }
+
+        .about-services {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .about-services h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .about-services p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px auto;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .service-card {
+            background: rgb(140, 215, 28);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+            flex: 1;
+            margin: 10px;
+        }
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        .service-card p {
+            line-height: 1.5;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer .social-icons {
+            margin-top: 10px;
+        }
+        footer .social-icons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+        }
+        footer .social-icons a:hover {
+            color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assests/silogo.png" alt="Centuryply Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="#">Tools</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="Faq.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <button>Need a Contractor?</button>
+            <button>Need an Interior Designer?</button>
+            <button>Bulk Order</button>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div>
+            <h1>Looking to renovate your place?</h1>
+            <button>Enquire Now</button>
+        </div>
+    </div>
+
+    <section class="about-services">
+        <h2>About Services</h2>
+        <p>
+            Forget flipping through endless magazines for inspiration. Imagine collaborating with design wizards to create a dream home that feels like an extension of yourself. At SI Industries, our renovation experts aren’t just masters of materials; they’re passionate about turning dream homes into reality. With over 38 years of experience, we know how to translate your unique style and needs into a space that inspires culinary creations and laughter-filled gatherings.
+        </p>
+    </section>
+
+    <section class="service-cards">
+        <div class="service-card">
+            <h3>Interior Design</h3>
+            <p>
+                Imagine bringing your dream to life with an interior designer who gets as excited about it as you do. At SI Industries, our designers are passionate about creating spaces that perfectly reflect your lifestyle.
+            </p>
+        </div>
+        <div class="service-card">
+            <h3>Contractor</h3>
+            <p>
+                Ditch the contractor search stress! At SI Industries, we connect you with specialists who are as passionate about your space as you are, crafting a space that reflects your personality and dreams.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Copyright 2025 - SI Industries. All Rights Reserved | Terms & Conditions | Privacy Policy</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+    </footer>
+</body>
+</html>

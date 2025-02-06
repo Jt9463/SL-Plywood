@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Bar</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #fff;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Dropdown Menu Styling */
+        nav ul li .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        nav ul li .dropdown a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        nav ul li .dropdown a:hover {
+            background: #f9f9f9;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .banner {
+            background: url('assests/moreBG.webp') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5em 1em;
+        }
+        .banner h2 {
+            margin: 0.5em 0;
+        }
+        .content-section {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 1em;
+            text-align: center;
+        }
+        .content-section h2 {
+            margin-bottom: 1em;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 2em 0;
+        }
+        .stat {
+            background-color: #4CAF50;
+            text-align: center;
+        }
+        .stat h3 {
+            margin: 0.5em 0;
+            color: #004d26;
+        }
+        .contact-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 1em;
+            background-color: #f4f4f4;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form, .contact-info {
+            flex: 1;
+            margin: 1em;
+        }
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form input, .contact-form textarea, .contact-form button {
+            margin: 0.5em 0;
+            padding: 0.8em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: #004d26;
+            color: white;
+            border: none;
+        }
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+        }
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assests/silogo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="Faq.html">Contact Us</a></li>
+                <li>
+                    <a href="#">More</a>
+                    <div class="dropdown">
+                        <a href="#">About Us</a>
+                        <a href="#">Media</a>
+                        <a href="#">Investors</a>
+                        <a href="#">Careers</a>
+                        <a href="#">CSR</a>
+                        <a href="#">Testimonials</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="banner">
+        <h2>About Us</h2>
+        <p>15 Years of Excellence in the Woodworking Industry</p>
+    </div>
+    <section class="content-section">
+        <h2>Welcome to SI Industries</h2>
+        <p>At SI Industries, we take pride in providing high-quality plywood products that meet the demands of our customers. With over 15 years of experience, our commitment to quality and innovation ensures every product is durable and reliable.</p>
+    </section>
+    <section class="stats">
+        <div class="stat">
+            <h3>15+</h3>
+            <p>Years of Experience</p>
+        </div>
+        <div class="stat">
+            <h3>58+</h3>
+            <p>Branches in India</p>
+        </div>
+        <div class="stat">
+            <h3>8K+</h3>
+            <p>Happy Customers</p>
+        </div>
+        <div class="stat">
+            <h3>80+</h3>
+            <p>Dedicated Professionals</p>
+        </div>
+    </section>
+    <section class="contact-section">
+        <div class="contact-form">
+            <h3>Request a Quote</h3>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Message" rows="5" required></textarea>
+                <button type="submit">Send Inquiry</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Phone:</strong> +91 99971 57020</p>
+            <p><strong>Email:</strong> info@siindustriesindia.com</p>
+            <p>Reach out to us from 9:00 AM to 5:00 PM, Monday to Friday. We are here to assist you.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 SI Industries. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

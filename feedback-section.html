@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Feedback</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url('assests/bgfeedback.webp');
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .feedback-section {
+            text-align: center;
+            width: 80%;
+            max-width: 1200px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .feedback-section h2 {
+            font-size: 5rem;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .feedback-section h2 span {
+            color: teal;
+        }
+
+        .slider-wrapper {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .feedback-container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            width: fit-content;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .feedback-box {
+            flex: 0 0 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, font-size 0.3s ease-in-out;
+            cursor: pointer;
+            text-align: left;
+            min-width: 300px;
+        }
+
+        .feedback-box:hover {
+            background: #00796b;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .feedback-box.active {
+            background: #004d40;
+            color: white;
+            transform: scale(1.3);
+            font-size: 1.2rem;
+        }
+
+        h4 {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Add Feedback Box */
+        .add-feedback {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            background: white;
+            color: teal;
+            border: 2px dashed teal;
+            cursor: pointer;
+            min-width: 100px;
+            border-radius: 12px;
+            height: 100px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .add-feedback:hover {
+            background: teal;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Feedback Form */
+        .feedback-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            z-index: 10;
+            transition: opacity 0.3s ease;
+        }
+
+        .feedback-form input, 
+        .feedback-form textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .feedback-form button {
+            background: teal;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .feedback-form button:hover {
+            background: #005f56;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 5;
+            transition: opacity 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .feedback-box {
+                min-width: 250px;
+            }
+
+            .feedback-form {
+                width: 80%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="feedback-section">
+        <h2>What Client <span>Say's</span></h2>
+        <div class="slider-wrapper">
+            <div class="feedback-container">
+                <div class="feedback-box">
+                    <p>NicePly has consistently exceeded our expectations. Their products have proven to be the backbone of our builds.</p>
+                    <h4>Ajay Dixit</h4>
+                </div>
+                <div class="feedback-box">
+                    <p>NicePly has been a game-changer for our projects. The strength and durability of their products are unmatched.</p>
+                    <h4>Rahul Aryan</h4>
+                </div>
+                <div class="feedback-box">
+                    <p>As an engineer, I appreciate innovation in materials. NicePly's commitment to quality is evident in every project.</p>
+                    <h4>Amit Jha</h4>
+                </div>
+                <div class="feedback-box">
+                    <p>Their plywood is durable and reliable. We've been using it for years without any complaints.</p>
+                    <h4>Sneha Kapoor</h4>
+                </div>
+                <div class="feedback-box">
+                    <p>Exceptional quality and customer service! NicePly delivers what they promise.</p>
+                    <h4>Vikram Mehta</h4>
+                </div>
+                <div class="feedback-box">
+                    <p>NicePly provides the best plywood materials in the market. The durability and finish are outstanding.</p>
+                    <h4>Rohit Sharma</h4>
+                </div>
+                <div class="add-feedback"><p>Give Feedback</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Form -->
+    <div class="overlay"></div>
+    <div class="feedback-form">
+        <h3>Submit Feedback</h3>
+        <input type="text" id="name" placeholder="Your Name">
+        <textarea id="feedback" placeholder="Your Feedback"></textarea>
+        <button onclick="submitFeedback()">Submit</button>
+    </div>
+
+    <script>
+        const slider = document.querySelector(".feedback-container");
+        const feedbackBoxes = document.querySelectorAll(".feedback-box");
+        const addFeedbackBtn = document.querySelector(".add-feedback");
+        const feedbackForm = document.querySelector(".feedback-form");
+        const overlay = document.querySelector(".overlay");
+        let index = 0;
+        let autoSlideInterval;
+        let isPaused = false;
+
+        // Clone the first feedback box and append it to create an endless loop effect
+        const firstBoxClone = feedbackBoxes[0].cloneNode(true);
+        slider.appendChild(firstBoxClone);
+
+        function startAutoSlide() {
+            if (isPaused) return;
+            autoSlideInterval = setInterval(() => {
+                index++;
+                if (index >= feedbackBoxes.length) {
+                    index = 0;
+                    // Reset the slider to loop back smoothly
+                    slider.style.transition = 'none';
+                    slider.style.transform = `translateX(0)`;
+                    setTimeout(() => {
+                        slider.style.transition = 'transform 0.5s ease-in-out';
+                    }, 50);
+                }
+                updateSlider();
+            }, 3000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+            isPaused = true;
+        }
+
+        function updateSlider() {
+            const translateValue = -index * 320 + "px"; 
+            slider.style.transform = `translateX(${translateValue})`;
+        }
+
+        addFeedbackBtn.addEventListener("click", () => {
+            stopAutoSlide();
+            feedbackForm.style.display = "block";
+            overlay.style.display = "block";
+            feedbackForm.style.opacity = 1;
+            overlay.style.opacity = 1;
+        });
+
+        function submitFeedback() {
+            alert("Thank you for your feedback!");
+            feedbackForm.style.display = "none";
+            overlay.style.display = "none";
+            feedbackForm.style.opacity = 0;
+            overlay.style.opacity = 0;
+            isPaused = false;
+            startAutoSlide();
+        }
+
+        startAutoSlide();
+    </script>
+</body>
+</html>

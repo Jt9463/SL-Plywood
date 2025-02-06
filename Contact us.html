@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SI Industries</title>
+    <style>
+        body {
+            background-color: #c9f1a9;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #f7f7f7;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .customer-care, .contact-info, .social-address, .contact-form, .vendor-registration {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .contact-info, .social-address {
+            display: flex;
+            justify-content: space-between;
+        }
+        .contact-info div, .social-address div {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .contact-form form, .vendor-registration {
+            text-align: center;
+        }
+        .contact-form input, .contact-form select, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            border: none;
+            background: red;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer .social-icons {
+            margin-top: 10px;
+        }
+        footer .social-icons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+        }
+        footer .social-icons a:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <div class="container">
+        
+        <div class="section customer-care">
+            <h2>Customer Care</h2>
+            <p><strong>Toll Free:</strong> 1800-5722-122</p>
+            <p><strong>SMS:</strong> CPIL to 56070</p>
+        </div>
+
+        
+        <div class="section contact-info">
+            <div>
+                <h2>Contact Information</h2>
+                <p><strong>Address:</strong> Century House, P15/1, Taratala Road, Kolkata, West Bengal, 700088</p>
+                <p><strong>Phone:</strong> +91 033 3940 3950</p>
+                <p><strong>Email:</strong> <a href="mailto:customerhelpdesk@centuryply.com">SIindustries@gmail.com</a></p>
+            </div>
+            <div>
+                <h2>Map</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.057807037135!2d88.30345091495658!3d22.531339685197554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277df94f6a1bb%3A0xa35be9757688108d!2sCentury%20House!5e0!3m2!1sen!2sin!4v1615472137148!5m2!1sen!2sin"
+                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- Social Address Section -->
+        <div class="section social-address">
+            <div>
+                <h2>Social Address</h2>
+                <p>
+                    <a href="#">Facebook</a> | 
+                    <a href="#">Instagram</a> | 
+                    <a href="#">LinkedIn</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="section contact-form">
+            <h2>Get in Touch with Us</h2>
+            <form>
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="text" name="mobile" placeholder="Mobile Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <select name="state">
+                    <option value="">Select State</option>
+                    <option value="State1">State 1</option>
+                </select>
+                <select name="city">
+                    <option value="">Select City</option>
+                    <option value="City1">City 1</option>
+                </select>
+                <textarea name="comment" placeholder="Comment" rows="4"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <!-- Vendor Registration Section -->
+        <div class="section vendor-registration">
+            <h2>Vendor Registration</h2>
+            <p>Share your details & our team will get in touch with you.</p>
+            <button>Register Now</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© Copyright 2025 - SI Industries. All Rights Reserved | Terms & Conditions | Privacy Policy</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+    </footer>
+</body>
+</html>

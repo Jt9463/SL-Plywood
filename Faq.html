@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SI Industries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1em;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .hero {
+            text-align: center;
+            padding: 2em;
+            background-color: #f4f4f4;
+        }
+        .hero h1 {
+            margin: 0.5em 0;
+        }
+        .faq-section {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1em;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .faq {
+            margin-bottom: 1em;
+        }
+        .faq h3 {
+            margin: 0;
+            cursor: pointer;
+            background-color: #4CAF50;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+        }
+        .faq p {
+            margin: 0;
+            padding: 0.5em;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to SI Industries</h1>
+        <p>Quality plywood for all your needs</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tools</a>
+        <a href="product.html">Products</a>
+        <a href="Contact us.html">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Your One-Stop Shop for Premium Plywood</h1>
+        <p>Explore our wide range of plywood options designed to meet your project requirements.</p>
+    </div>
+
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+            <h3>What types of plywood do you offer?</h3>
+            <p>We offer a variety of plywood including marine, commercial, and hardwood plywood.</p>
+        </div>
+
+        <div class="faq">
+            <h3>What is the standard size of your plywood sheets?</h3>
+            <p>Our plywood sheets are typically 8x4 feet, but custom sizes are available upon request.</p>
+        </div>
+
+        <div class="faq">
+            <h3>Do you provide delivery services?</h3>
+            <p>Yes, we offer delivery services across the country for your convenience.</p>
+        </div>
+
+        <div class="faq">
+            <h3>How can I place an order?</h3>
+            <p>You can place an order through our website or by contacting our sales team directly.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Plywood World. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq h3').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
