@@ -79,11 +79,70 @@
     
     <script>
 
-fetch('/Header.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('header-container').innerHTML = data;
+        // Load the header
+        document.addEventListener('DOMContentLoaded', function() {
+    fetch('/Header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            
+            // Initialize header functionality after content is loaded
+            initializeHeader();
+        })
+        .catch(error => {
+            console.error('Error loading header:', error);
+        });
+});
+
+// Function to initialize header functionality
+function initializeHeader() {
+    const hamburger = document.getElementById('hamburger');
+    const navWrapper = document.getElementById('nav-wrapper');
+    const body = document.body;
+
+    if (!hamburger || !navWrapper) {
+        console.error('Header elements not found');
+        return;
+    }
+
+    // Toggle menu function
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        navWrapper.classList.toggle('active');
+        body.style.overflow = navWrapper.classList.contains('active') ? 'hidden' : '';
+    }
+
+    // Hamburger click event
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleMenu();
     });
+
+    // Close menu when clicking links
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (navWrapper.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navWrapper.contains(e.target) && 
+            !hamburger.contains(e.target) && 
+            navWrapper.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+
+    // Close menu on ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navWrapper.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+}
 
 
 
