@@ -1,5 +1,6 @@
+/* footer.css */
 .si-footer {
-    background: linear-gradient(to right, #1a1a1a, #2d2d2d);
+    background: linear-gradient(to right, #0B4619, #42855B);
     color: #ffffff;
     padding: 50px 0 20px;
     margin-top: 50px;
@@ -15,30 +16,30 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(to right, #008080, #00a3a3);
+    background: linear-gradient(to right, #90B77D, #42855B);
 }
 
 .si-footer-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
-    gap: 40px;
+    padding: 0 40px;
+    gap: 60px;
 }
 
 .si-footer-section {
     flex: 1;
-    min-width: 250px;
+    min-width: 280px;
 }
 
 .si-footer-section h3 {
-    color: #008080;
-    font-size: 1.4rem;
-    margin-bottom: 20px;
+    color: #90B77D;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
     position: relative;
-    padding-bottom: 10px;
-    font-weight: normal;
+    padding-bottom: 12px;
+    font-weight: 600;
 }
 
 .si-footer-section h3::after {
@@ -46,14 +47,14 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 50px;
-    height: 2px;
-    background: #008080;
+    width: 60px;
+    height: 3px;
+    background: #90B77D;
 }
 
 .si-footer-section p {
-    color: #b3b3b3;
-    font-size: 0.95rem;
+    color: #e0e0e0;
+    font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 20px;
 }
@@ -61,59 +62,80 @@
 .si-footer-links {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
 }
 
 .si-footer-links a {
-    color: #b3b3b3;
+    color: #e0e0e0;
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
     position: relative;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    padding-left: 20px;
 }
 
-.si-footer-links a::after {
-    content: '';
+.si-footer-links a::before {
+    content: '→';
     position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: -2px;
     left: 0;
-    background-color: #008080;
-    transition: width 0.3s ease;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 .si-footer-links a:hover {
-    color: #008080;
+    color: #90B77D;
     transform: translateX(5px);
 }
 
-.si-footer-links a:hover::after {
-    width: 100%;
+.si-footer-links a:hover::before {
+    opacity: 1;
 }
 
 .si-social-icons {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .si-social-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 50px;  /* Increased from 45px */
+    height: 50px; /* Increased from 45px */
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
     transition: all 0.3s ease;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.si-social-icon svg {
+    width: 24px;  /* Increased from 20px */
+    height: 24px; /* Increased from 20px */
+    transition: all 0.3s ease;
+}
+
+.si-social-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(144, 183, 125, 0.2);
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+.si-social-icon:hover::before {
+    transform: scale(1);
 }
 
 .si-social-icon:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 128, 128, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(144, 183, 125, 0.3);
 }
 
 .si-social-icon.instagram:hover {
@@ -128,46 +150,114 @@
     background: #25D366;
 }
 
+.si-social-icon svg {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+.si-social-icon:hover svg {
+    transform: scale(1.1);
+}
+
 .si-footer-bottom {
     text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
+    margin-top: 50px;
+    padding-top: 25px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;           /* Added */
+    justify-content: center; /* Added */
+    align-items: center;     /* Added */
 }
 
 .si-footer-bottom p {
-    color: #808080;
-    font-size: 0.9rem;
+    color: #90B77D;
+    font-size: 1rem;
     margin: 0;
+    text-align: center;      /* Added */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .si-footer-container {
+        padding: 0 30px;
+        gap: 40px;
+        max-width: 960px;
+    }
+
+    .si-footer-section {
+        min-width: 250px;
+    }
+
+    .si-footer-section h3 {
+        font-size: 1.4rem;
+    }
 }
 
 @media (max-width: 768px) {
     .si-footer-container {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 30px;
+        align-items: flex-start;
+        padding: 0 25px;
+        gap: 35px;
     }
 
     .si-footer-section {
         width: 100%;
-        min-width: auto;
-    }
-
-    .si-footer-section h3::after {
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     .si-social-icons {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
-    .si-footer-links {
-        align-items: center;
+    .si-footer-section h3 {
+        font-size: 1.3rem;
     }
 
-    .si-footer-links a:hover {
-        transform: translateY(-3px);
+    .si-footer-section h3::after {
+        width: 50px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .si-footer {
+        padding: 40px 0 20px;
+    }
+
+    .si-footer-container {
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .si-footer-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .si-footer-section p,
+    .si-footer-links a {
+        font-size: 0.95rem;
+    }
+
+    .si-social-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .si-social-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .si-footer-bottom {
+        margin-top: 40px;
+    }
+
+    .si-footer-bottom p {
+        font-size: 0.9rem;
     }
 }

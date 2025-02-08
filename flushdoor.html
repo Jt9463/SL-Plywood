@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Nice Ply - Flush Door</title>
     <style>
         /* All previous styles remain exactly the same */
@@ -12,13 +14,15 @@
 </head>
 
 <body>
+    <div id="header-container"></div>
+
     <div class="container">
         <main class="main-content">
             <h1>Flush Door</h1>
             <p>Enhance the beauty and functionality of your interiors with Nice Ply's Flush Doors. Combining sleek design with robust construction, our flush doors offer privacy, security, and a touch of elegance to any space.</p>
 
             <div class="image-container">
-                <img src="assests/flushdoor.jpg" alt="Premium Flush Door" class="product-image" onclick="openLightbox(this)">
+                <img src="assests/flush-door.jpg" alt="Premium Flush Door" class="product-image" onclick="openLightbox(this)">
             </div>
 
             <div class="features">
@@ -65,6 +69,8 @@
         </aside>
     </div>
 
+    <div id="footer-placeholder"></div>
+
     <div class="lightbox" onclick="closeLightbox()">
         <span class="close-lightbox">&times;</span>
         <img src="" alt="Fullsize Flush Door Image">
@@ -72,6 +78,12 @@
 
     <script>
         // Function to open lightbox
+
+        fetch('/Header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+    });
         function openLightbox(img) {
             const lightbox = document.querySelector('.lightbox');
             const lightboxImg = lightbox.querySelector('img');
@@ -99,6 +111,19 @@
         document.querySelector('.lightbox img').addEventListener('click', function (e) {
             e.stopPropagation();
         });
+
+            //FOOTER 
+
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+        console.error('Error loading footer:', error);
+    });
+
+    //Footer end
     </script>
 </body>
 

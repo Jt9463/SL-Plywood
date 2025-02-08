@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Nice Ply - Shuttering Plywood</title>
     <style>
         /* All previous styles remain exactly the same */
@@ -12,13 +14,15 @@
 </head>
 
 <body>
+    <div id="header-container"></div>
+
     <div class="container">
         <main class="main-content">
             <h1>Shuttering Plywood</h1>
             <p>Build with confidence using Nice Ply's Shuttering Plywood. Engineered for the rigors of concrete formwork, our shuttering plywood offers exceptional strength, durability, and reusability, ensuring smooth and efficient construction.</p>
 
             <div class="image-container">
-                <img src="assests/shutteringply.jpg" alt="Premium Shuttering Plywood" class="product-image" onclick="openLightbox(this)">
+                <img src="assests/Shuttering-Plywood.jpg" alt="Premium Shuttering Plywood" class="product-image" onclick="openLightbox(this)">
             </div>
 
             <div class="features">
@@ -65,14 +69,26 @@
         </aside>
     </div>
 
+    <div id="footer-placeholder"></div>
+
+    <!-- Lightbox container -->
     <div class="lightbox" onclick="closeLightbox()">
         <span class="close-lightbox">&times;</span>
-        <img src="" alt="Fullsize Shuttering Plywood Image">
+        <img src="" alt="Fullsize Marine Plywood Image">
     </div>
 
+    <!-- Previous JavaScript remains exactly the same -->
     <script>
-        // Function to open lightbox
-        function openLightbox(img) {
+
+                fetch('/Header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                });
+    
+
+              // Function to open lightbox
+              function openLightbox(img) {
             const lightbox = document.querySelector('.lightbox');
             const lightboxImg = lightbox.querySelector('img');
             lightboxImg.src = img.src;
@@ -89,16 +105,29 @@
         }
 
         // Close lightbox when pressing ESC key
-        document.addEventListener('keydown', function (e) {
+        document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeLightbox();
             }
         });
 
         // Prevent lightbox image click from closing the lightbox
-        document.querySelector('.lightbox img').addEventListener('click', function (e) {
+        document.querySelector('.lightbox img').addEventListener('click', function(e) {
             e.stopPropagation();
         });
+
+                //FOOTER 
+    
+                fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading footer:', error);
+                });
+        
+                //Footer end
     </script>
 </body>
 

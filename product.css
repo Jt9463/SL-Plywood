@@ -1,10 +1,11 @@
 :root {
-    --primary-color: #2c5282;
-    --secondary-color: #e2a03f;
-    --accent-color: #4299e1;
-    --text-color: #2d3748;
-    --light-bg: #f7fafc;
-    --gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    --primary-dark-green: #0A3622;    /* Dark green from logo */
+    --primary-light-green: #7AB547;   /* Light green from logo */
+    --secondary-green: #548235;       /* Medium green for accents */
+    --text-dark: #1A1A1A;
+    --text-light: #FFFFFF;
+    --light-bg: #F5F8F5;             /* Light green tinted background */
+    --gradient: linear-gradient(135deg, var(--primary-dark-green), var(--primary-light-green));
 }
 
 * {
@@ -16,7 +17,7 @@
 
 body {
     background-color: var(--light-bg);
-    color: var(--text-color);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
@@ -31,10 +32,13 @@ body {
 
 .main-content {
     padding: 30px;
-    background: white;
+    background: var(--text-light);
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(10, 54, 34, 0.1);
     transition: transform 0.3s ease;
+}
+.main-content p{
+    color: #548235;
 }
 
 .main-content:hover {
@@ -42,7 +46,7 @@ body {
 }
 
 h1 {
-    color: var(--primary-color);
+    color: var(--primary-dark-green);
     font-size: 2.5em;
     margin-bottom: 20px;
     position: relative;
@@ -56,7 +60,7 @@ h1::after {
     left: 0;
     width: 60px;
     height: 4px;
-    background: var(--secondary-color);
+    background: var(--primary-light-green);
     border-radius: 2px;
 }
 
@@ -74,7 +78,7 @@ h1::after {
     display: block;
     margin: 30px auto;
     border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 30px rgba(10, 54, 34, 0.15);
     transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
 }
@@ -87,7 +91,9 @@ h1::after {
 .features {
     margin-top: 40px;
 }
-
+.feature-item p{
+    color: #548235;
+}
 .feature-item {
     margin-bottom: 25px;
     padding: 20px;
@@ -98,28 +104,28 @@ h1::after {
 }
 
 .feature-item:hover {
-    border-left-color: var(--secondary-color);
+    border-left-color: var(--primary-light-green);
     transform: translateX(10px);
-    background: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    background: var(--text-light);
+    box-shadow: 0 5px 15px rgba(10, 54, 34, 0.08);
 }
 
 .feature-item strong {
-    color: var(--primary-color);
+    color: var(--primary-dark-green);
     font-size: 1.1em;
     display: block;
     margin-bottom: 5px;
 }
 
 .sidebar {
-    background: white;
+    background: var(--text-light);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(10, 54, 34, 0.1);
 }
 
 .sidebar h3 {
-    color: var(--primary-color);
+    color: var(--primary-dark-green);
     margin-bottom: 20px;
     font-size: 1.5em;
 }
@@ -133,7 +139,7 @@ h1::after {
 }
 
 .products-list a {
-    color: var(--text-color);
+    color: var(--text-dark);
     text-decoration: none;
     padding: 12px 20px;
     display: block;
@@ -145,7 +151,7 @@ h1::after {
 }
 
 .products-list a:hover {
-    color: white;
+    color: var(--text-light);
     background: var(--gradient);
     transform: translateX(10px);
 }
@@ -164,7 +170,7 @@ h1::after {
 
 .cta-box {
     background: var(--gradient);
-    color: white;
+    color: var(--text-light);
     padding: 30px;
     border-radius: 15px;
     margin-top: 30px;
@@ -179,7 +185,7 @@ h1::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 100%);
+    background: linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
     transform: translateX(-100%);
     transition: transform 0.6s ease;
 }
@@ -190,22 +196,22 @@ h1::after {
 
 .cta-button {
     display: inline-block;
-    background: white;
-    color: var(--primary-color);
+    background: var(--text-light);
+    color: var(--primary-dark-green);
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 25px;
     margin-top: 20px;
     font-weight: bold;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(10, 54, 34, 0.2);
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    background: var(--secondary-color);
-    color: white;
+    box-shadow: 0 8px 20px rgba(10, 54, 34, 0.3);
+    background: var(--primary-light-green);
+    color: var(--text-light);
 }
 
 /* Lightbox styles */
@@ -216,7 +222,7 @@ h1::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(10, 54, 34, 0.9);
     z-index: 1000;
     cursor: pointer;
 }
@@ -240,7 +246,7 @@ h1::after {
     position: absolute;
     top: 20px;
     right: 20px;
-    color: white;
+    color: var(--text-light);
     font-size: 30px;
     cursor: pointer;
     width: 40px;
@@ -288,6 +294,22 @@ h1::after {
 .feature-item:nth-child(4) { animation-delay: 0.8s; }
 
 /* Responsive styles */
+@media (max-width: 1024px) {
+    .container {
+        padding: 30px 15px;
+        gap: 30px;
+    }
+
+    .product-image {
+        width: 100%;
+        height: 280px;
+    }
+
+    .feature-item {
+        padding: 15px;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
@@ -306,7 +328,37 @@ h1::after {
     }
 
     .product-image {
-        width: 100%;
         height: 250px;
+    }
+
+    .cta-box {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .feature-item {
+        margin-bottom: 15px;
+    }
+
+    .products-list a {
+        padding: 10px 15px;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
     }
 }

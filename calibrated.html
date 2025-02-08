@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Nice Ply - Calibrated Plywood</title>
     <style>
         /* All previous styles remain exactly the same */
@@ -12,13 +14,16 @@
 </head>
 
 <body>
+
+    <div id="header-container"></div>
+
     <div class="container">
         <main class="main-content">
             <h1>Calibrated Plywood</h1>
             <p>Achieve the pinnacle of precision and efficiency with Nice Ply's Calibrated Plywood. Engineered for projects demanding exact uniformity and flawless surfaces, our calibrated plywood ensures seamless integration and superior results, every time.</p>
 
             <div class="image-container">
-                <img src="assests/calibratedply.jpg" alt="Premium Calibrated Plywood" class="product-image" onclick="openLightbox(this)">
+                <img src="assests/Calibrated-Plywood.jpg" alt="Premium Calibrated Plywood" class="product-image" onclick="openLightbox(this)">
             </div>
 
             <div class="features">
@@ -70,7 +75,18 @@
         <img src="" alt="Fullsize Calibrated Plywood Image">
     </div>
 
+    <div id="footer-placeholder"></div>
+    
     <script>
+
+fetch('/Header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+    });
+
+
+
                 // Function to open lightbox
                 function openLightbox(img) {
             const lightbox = document.querySelector('.lightbox');
@@ -99,6 +115,19 @@
         document.querySelector('.lightbox img').addEventListener('click', function (e) {
             e.stopPropagation();
         });
+
+            //FOOTER 
+
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+        console.error('Error loading footer:', error);
+    });
+
+    //Footer end
     </script>
 </body>
 

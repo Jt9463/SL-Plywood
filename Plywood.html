@@ -3,326 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Nice Ply - Premium Plywood Products</title>
-    <style>
-        :root {
-            --primary-color: #2c5282;
-            --secondary-color: #e2a03f;
-            --accent-color: #4299e1;
-            --text-color: #2d3748;
-            --light-bg: #f7fafc;
-            --gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-        }
-
-        .main-content {
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .main-content:hover {
-            transform: translateY(-5px);
-        }
-
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--secondary-color);
-            border-radius: 2px;
-        }
-
-        .image-container {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .product-image {
-            width: 500px;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-            margin: 30px auto;
-            border-radius: 15px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, filter 0.3s ease;
-            cursor: pointer;
-        }
-
-        .product-image:hover {
-            transform: scale(1.02);
-            filter: brightness(1.1);
-        }
-
-        .features {
-            margin-top: 40px;
-        }
-
-        .feature-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: var(--light-bg);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-        }
-
-        .feature-item:hover {
-            border-left-color: var(--secondary-color);
-            transform: translateX(10px);
-            background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-
-        .feature-item strong {
-            color: var(--primary-color);
-            font-size: 1.1em;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .sidebar {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .sidebar h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-
-        .products-list {
-            list-style: none;
-        }
-
-        .products-list li {
-            margin-bottom: 10px;
-        }
-
-        .products-list a {
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 12px 20px;
-            display: block;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            background: var(--light-bg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .products-list a:hover {
-            color: white;
-            background: var(--gradient);
-            transform: translateX(10px);
-        }
-
-        .products-list a::before {
-            content: '→';
-            position: absolute;
-            right: 20px;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .products-list a:hover::before {
-            opacity: 1;
-        }
-
-        .cta-box {
-            background: var(--gradient);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 30px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 100%);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .cta-box:hover::before {
-            transform: translateX(0);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: var(--primary-color);
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 25px;
-            margin-top: 20px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            background: var(--secondary-color);
-            color: white;
-        }
-
-        /* Lightbox styles */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            cursor: pointer;
-        }
-
-        .lightbox.active {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .close-lightbox {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .close-lightbox:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: rotate(90deg);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .lightbox.active img {
-            animation: zoomIn 0.3s ease-out;
-        }
-
-        .main-content, .sidebar {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        .feature-item {
-            opacity: 0;
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        .feature-item:nth-child(1) { animation-delay: 0.2s; }
-        .feature-item:nth-child(2) { animation-delay: 0.4s; }
-        .feature-item:nth-child(3) { animation-delay: 0.6s; }
-        .feature-item:nth-child(4) { animation-delay: 0.8s; }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-            
-            .main-content, .sidebar {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .feature-item:hover {
-                transform: translateX(5px);
-            }
-
-            .product-image {
-                width: 100%;
-                height: 250px;
-            }
-        }
-    </style>
 </head>
 <body>
+
+
+    <div id="header-container"></div>
+
     <div class="container">
         <main class="main-content">
-            <h1>Premium Plywood Solutions</h1>
+            <h1>Premium Plywood</h1>
             <p>Nice Ply is the best plywood manufacturer. We take pride in delivering top-notch quality that stands the test of time. Our commitment to excellence, innovation, and sustainability sets us apart in the industry.</p>
             
             <div class="image-container">
@@ -354,11 +47,11 @@
             <h3>Our Products</h3>
             <ul class="products-list">
                 <li><a href="#">Premium Plywood</a></li>
-                <li><a href="#">Marine Plywood</a></li>
-                <li><a href="#">Calibrated Plywood</a></li>
-                <li><a href="#">Block Board</a></li>
-                <li><a href="#">Flush Door</a></li>
-                <li><a href="#">Shuttering Plywood</a></li>
+                <li><a href="Marine.html">Marine Plywood</a></li>
+                <li><a href="calibrated.html">Calibrated Plywood</a></li>
+                <li><a href="Block board.html">Block Board</a></li>
+                <li><a href="flushdoor.html">Flush Door</a></li>
+                <li><a href="Shuttering.html">Shuttering Plywood</a></li>
             </ul>
             
             <div class="cta-box">
@@ -371,12 +64,21 @@
     <!-- Lightbox container -->
     <div class="lightbox" onclick="closeLightbox()">
         <span class="close-lightbox">&times;</span>
-        <img src="" alt="Fullsize Image">
+        <img src="" alt="Fullsize Marine Plywood Image">
     </div>
 
+    <!-- Previous JavaScript remains exactly the same -->
     <script>
-        // Function to open lightbox
-        function openLightbox(img) {
+
+                fetch('/Header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                });
+    
+
+              // Function to open lightbox
+              function openLightbox(img) {
             const lightbox = document.querySelector('.lightbox');
             const lightboxImg = lightbox.querySelector('img');
             lightboxImg.src = img.src;
@@ -403,6 +105,19 @@
         document.querySelector('.lightbox img').addEventListener('click', function(e) {
             e.stopPropagation();
         });
+
+                //FOOTER 
+    
+                fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading footer:', error);
+                });
+        
+                //Footer end
     </script>
 </body>
 </html>

@@ -12,135 +12,263 @@
 
 </head>
 <body>
-    <header class="main-header">
-        <div class="header-logo">
-            <img src="assests/silogo.png" alt="SI Industries Logo">
-        </div>
-        <nav class="main-nav">
-            <ul>
-                <div class="search-container">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search..." aria-label="Search">
-                        <button type="submit">
-                            <svg viewBox="0 0 24 24" width="18" height="18">
-                                <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <li><a href="#">Home</a></li>
-                <li><a href="product.html">Products</a></li>
-                <li><a href="tools.html">Tools</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="Contact us.html">Contact us</a></li>
-                <li><a href="More.html">More</a></li>
-            </ul>
-        </nav>        
-      </header>
-
       <div id="popupContainer"></div>
-      
 
-
+    <!-- Include the header -->
+    <div id="header-container"></div>
 
     <div class="home-slider-container">
         <div class="home-slider-wrapper" id="homeSlider">
-            <img class="home-slider-image" src="assests/furniture1.jpg" alt="Slide 1">
-            <img class="home-slider-image" src="assests/slide1.jpg" alt="Slide 2">
-            <img class="home-slider-image" src="assests/slide2.jpg" alt="Slide 3">
-            <img class="home-slider-image" src="assests/slide3.jpeg" alt="Slide 4">
-            <img class="home-slider-image" src="assests/furniture2.jpg" alt="Slide 5">
-            <img class="home-slider-image" src="assests/Lcdpanel2.png" alt="Slide 6">
-            <img class="home-slider-image" src="assests/furniture1.jpg" alt="Slide 7">
+            <div class="home-slider-item active">
+                <img class="home-slider-image" src="assests/1.jpg" alt="Slide 1">
+                <div class="home-slider-content">
+                    <h2 class="home-slider-text-animation">Modern Furniture</h2>
+                    <p class="home-slider-text-animation home-slider-delay-1">Transform your space</p>
+                    <p class="home-slider-text-animation home-slider-delay-2">with our elegant collection</p>
+                </div>
+            </div>
+            <div class="home-slider-item">
+                <img class="home-slider-image" src="assests/2.jpg" alt="Slide 2">
+                <div class="home-slider-content">
+                    <h2 class="home-slider-text-animation">Premium Quality</h2>
+                    <p class="home-slider-text-animation home-slider-delay-1">Experience excellence</p>
+                    <p class="home-slider-text-animation home-slider-delay-2">in every detail</p>
+                </div>
+            </div>
+            <div class="home-slider-item">
+                <img class="home-slider-image" src="assests/3.jpg" alt="Slide 3">
+                <div class="home-slider-content">
+                    <h2 class="home-slider-text-animation">Innovative Design</h2>
+                    <p class="home-slider-text-animation home-slider-delay-1">Where style meets</p>
+                    <p class="home-slider-text-animation home-slider-delay-2">functionality</p>
+                </div>
+            </div>
+            <div class="home-slider-item">
+                <img class="home-slider-image" src="assests/4.jpg" alt="Slide 4">
+                <div class="home-slider-content">
+                    <h2 class="home-slider-text-animation">Custom Solutions</h2>
+                    <p class="home-slider-text-animation home-slider-delay-1">Tailored to your</p>
+                    <p class="home-slider-text-animation home-slider-delay-2">unique needs</p>
+                </div>
+            </div>
+            <div class="home-slider-item">
+                <img class="home-slider-image" src="assests/furniture1.jpg" alt="Slide 5">
+                <div class="home-slider-content">
+                    <h2 class="home-slider-text-animation">Luxury Collection</h2>
+                    <p class="home-slider-text-animation home-slider-delay-1">Elevate your</p>
+                    <p class="home-slider-text-animation home-slider-delay-2">living space</p>
+                </div>
+            </div>
         </div>
-        <div class="home-slider-dots" id="homeSliderDots"></div>
+        <div class="home-slider-nav-zone home-slider-nav-prev" id="prevZone"></div>
+        <div class="home-slider-nav-zone home-slider-nav-next" id="nextZone"></div>
+        <div class="home-slider-dots" id="sliderDots"></div>
         <div class="home-slider-overlay"></div>
     </div>
 
-    <!-- #region -->
-    <div class="welcome-section">
-        <div class="welcome-image">
-          <img src="assests/Lcd panel1.jpg" alt="Kitchen Design">
-          <div class="experience-box">
-            25+ <br> Years of Experience
-          </div>
+    <!--        WELCOME SECTION        region -->
+    <div class="nice-welcome-section">
+        <div class="nice-welcome-image">
+            <img src="assests/furniture1.jpg" alt="Kitchen Design">
+            <div class="nice-experience-box">
+                <span class="nice-years">15+</span>
+                <span class="nice-exp-text">Years of Experience</span>
+            </div>
         </div>
-        <div class="welcome-content">
-          <h1 class="welcome-title">Welcome To <span>Nice Ply</span></h1>
-          <p class="welcome-subtitle">"Ply Ho, Toh Nice Ho"</p>
-          <p class="welcome-description">
-            At NicePly, we redefine strength through innovation. Our seasoned team pioneers material science with cutting-edge solutions. Quality is our cornerstone, and sustainability drives us. From construction to engineering, we offer tailored, trusted products globally.
-          </p>
-          <ul class="welcome-points">
-            <li>Unmatched Innovation: NicePly pioneers materials that surpass expectations.</li>
-            <li>Sustainability at Heart: We're dedicated to eco-friendly solutions for a greener world.</li>
-            <li>Customer-Centric Focus: Your success is our top priority, ensuring satisfaction at every step.</li>
-          </ul>
-          <a href="#" class="discover-more">Discover More</a>
+        <div class="nice-welcome-content">
+            <h1 class="nice-welcome-title">Welcome To <span>S.I. Industries</span></h1>
+            <p class="nice-welcome-subtitle">"Quality Plywood, Flushdoor & Blockboard"</p>
+            <p class="nice-welcome-description">
+                At S.I. Industries, we redefine strength through innovation. Our seasoned team pioneers material science with cutting-edge solutions. Quality is our cornerstone, and sustainability drives us. From construction to engineering, we offer tailored, trusted products globally.
+            </p>
+            <ul class="nice-welcome-points">
+                <li>Unmatched Innovation: S.I. Industries pioneers materials that surpass expectations.</li>
+                <li>Sustainability at Heart: We're dedicated to eco-friendly solutions for a greener world.</li>
+                <li>Customer-Centric Focus: Your success is our top priority, ensuring satisfaction at every step.</li>
+            </ul>
+            <a href="#" class="nice-discover-more">Discover More</a>
         </div>
-      </div>
-    <!-- #region -->
+    </div>
+    <!--        WELCOME END      -->
 
     
     <!--    Video   -->
-    <div class="heading"><h2>Glance of <span style="color: teal;">Nice Ply</span></h2></div>
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/tfwPAjo6Hjg?si=ziaaFONG_Fgyk5xZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="si-video-section">
+        <div class="heading">
+            <h2>Glance of <span>S.I. Industries</span></h2>
+            <div class="heading-underline"></div>
+            <p class="subheading">Experience Excellence in Wood Manufacturing</p>
+        </div>
+        
+        <div class="video-container" id="videoContainer">
+            <div class="video-wrapper">
+                <iframe id="youtubeVideo" 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/tfwPAjo6Hjg?si=ziaaFONG_Fgyk5xZ&enablejsapi=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-overlay" id="videoOverlay">
+                <div class="video-badge">
+                    <i class="play-icon">▶</i>
+                    <span>Watch Our Story</span>
+                </div>
+            </div>
+        </div>
     </div>
     <!--    video end    -->
 
+    <!--        *************    PRODUCT SECTION START        ************-->    
+
     <section class="products-section">
-        <h2>Our <span>Products</span></h2>
+        <div class="section-header">
+            <h2>Our <span>Products</span></h2>
+            <div class="header-underline"></div>
+            <p class="section-subtitle">Quality Wood Products for Every Need</p>
+        </div>
+        
         <div class="products-grid">
             <!-- Product 1 -->
-            <div class="product-card">
-                <img src="assests/plywood.png" alt="Plywood">
-                <h3>Plywood</h3>
-                <p>Nice Plywood is crafted from the finest wood, offering strength, durability, and versatility.</p>
-                <a href="Plywood.html" class="read-more">Read More →</a>
+            <div class="product-card" data-category="plywood">
+                <div class="product-image">
+                    <img src="assests/plywood.jpg" alt="Plywood">
+                    <div class="product-overlay">
+                        <span class="view-details">View Details</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3>Plywood</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★★</span>
+                        <span class="rating-text">Premium Quality</span>
+                    </div>
+                    <p>Nice Plywood is crafted from the finest wood, offering strength, durability, and versatility.</p>
+                    <a href="Plywood.html" class="read-more">
+                        Explore More 
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
             </div>
-
+    
             <!-- Product 2 -->
-            <div class="product-card">
-                <img src="assests/marineply.jpeg" alt="Marine Plywood">
-                <h3>Marine Plywood</h3>
-                <p>Engineered to withstand moisture, making it ideal for marine and exterior use.</p>
-                <a href="Marine.html" class="read-more">Read More →</a>
+            <div class="product-card" data-category="marine">
+                <div class="product-image">
+                    <img src="assests/marine.jpg" alt="Marine Plywood">
+                    <div class="product-overlay">
+                        <span class="view-details">View Details</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3>Marine Plywood</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★★</span>
+                        <span class="rating-text">Water Resistant</span>
+                    </div>
+                    <p>Engineered to withstand moisture, making it ideal for marine and exterior use.</p>
+                    <a href="Marine.html" class="read-more">
+                        Explore More 
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
             </div>
-
+    
             <!-- Product 3 -->
-            <div class="product-card">
-                <img src="assests/calibratedply.jpg" alt="Calibrated Plywood">
-                <h3>Calibrated Plywood</h3>
-                <p>Precision-engineered for flawless, flat surfaces. Best for uniform thickness projects.</p>
-                <a href="calibrated.html" class="read-more">Read More →</a>
+            <div class="product-card" data-category="calibrated">
+                <div class="product-image">
+                    <img src="assests/Calibrated-Plywood.jpg" alt="Calibrated Plywood">
+                    <div class="product-overlay">
+                        <span class="view-details">View Details</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3>Calibrated Plywood</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★★</span>
+                        <span class="rating-text">Precision Cut</span>
+                    </div>
+                    <p>Precision-engineered for flawless, flat surfaces. Best for uniform thickness projects.</p>
+                    <a href="calibrated.html" class="read-more">
+                        Explore More 
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
             </div>
-
+    
             <!-- Product 4 -->
-            <div class="product-card">
-                <img src="assests/blockboard.jpeg" alt="Block Board">
-                <h3>Block Board</h3>
-                <p>Perfect blend of aesthetics and strength, ideal for furniture, partitions, and interiors.</p>
-                <a href="Block board.html" class="read-more">Read More →</a>
+            <div class="product-card" data-category="blockboard">
+                <div class="product-image">
+                    <img src="assests/Block-Board.jpg" alt="Block Board">
+                    <div class="product-overlay">
+                        <span class="view-details">View Details</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3>Block Board</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★★</span>
+                        <span class="rating-text">Heavy Duty</span>
+                    </div>
+                    <p>Perfect blend of aesthetics and strength, ideal for furniture, partitions, and interiors.</p>
+                    <a href="Block board.html" class="read-more">
+                        Explore More 
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
             </div>
-
+    
             <!-- Product 5 -->
-            <div class="product-card">
-                <img src="assests/flushdoor.jpg" alt="Flush Door">
-                <h3>Flush Door</h3>
-                <p>Combines durability with aesthetics, providing security and longevity for interiors.</p>
-                <a href="flushdoor.html" class="read-more">Read More →</a>
+            <div class="product-card" data-category="flushdoor">
+                <div class="product-image">
+                    <img src="assests/flush-door.jpg" alt="Flush Door">
+                    <div class="product-overlay">
+                        <span class="view-details">View Details</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3>Flush Door</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★★</span>
+                        <span class="rating-text">Durable</span>
+                    </div>
+                    <p>Combines durability with aesthetics, providing security and longevity for interiors.</p>
+                    <a href="flushdoor.html" class="read-more">
+                        Explore More 
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
             </div>
-
+    
             <!-- Product 6 -->
-            <div class="product-card">
-                <img src="assests/shutteringply.jpg" alt="Shuttering Plywood">
-                <h3>Shuttering Plywood</h3>
-                <p>The trusted choice for construction frameworks, offering durability and reliability.</p>
-                <a href="Shuttering.html" class="read-more">Read More →</a>
+            <div class="product-card" data-category="shuttering">
+                <div class="product-image">
+                    <img src="assests/Shuttering-Plywood.jpg" alt="Shuttering Plywood">
+                    <div class="product-overlay">
+                        <span class="view-details">View Details</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3>Shuttering Plywood</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★★</span>
+                        <span class="rating-text">Construction Grade</span>
+                    </div>
+                    <p>The trusted choice for construction frameworks, offering durability and reliability.</p>
+                    <a href="Shuttering.html" class="read-more">
+                        Explore More 
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
+
+    <!--        ***********      PRODUCT SECTION ENDS  ********************* -->
+
 
     <!--    BRANDS -->
     <section class="brands-section">
@@ -148,54 +276,37 @@
         <div class="brands-grid">
             <!-- Brand 1 -->
             <a href="assests/plylook.png" class="brand-card">
-                <img src="assests/Brand1.png" alt="Antik Ply">
-                <p>Premium Plywood</p>
+                <div class="card-content">
+                    <img src="assests/Brand1.png" alt="Antik Ply" class="brand-image">
+                    <h3 class="brand-name">Antik Ply</h3>
+                    <p class="brand-category">Premium Plywood</p>
+                </div>
+                <div class="leaf-decoration"></div>
             </a>
-
+    
             <!-- Brand 2 -->
             <a href="assests/plylook.png" class="brand-card">
-                <img src="assests/brand2.png" alt="Millennium Gold">
-                <p>Standard Plywood</p>
+                <div class="card-content">
+                    <img src="assests/brand2.png" alt="Millennium Gold" class="brand-image">
+                    <h3 class="brand-name">Millennium Gold</h3>
+                    <p class="brand-category">Standard Plywood</p>
+                </div>
+                <div class="leaf-decoration"></div>
             </a>
-
+    
             <!-- Brand 3 -->
             <a href="assests/plylook.png" class="brand-card">
-                <img src="assests/brand3.png" alt="Red Premium">
-                <p>Economy Plywood</p>
+                <div class="card-content">
+                    <img src="assests/brand3.png" alt="Red Premium" class="brand-image">
+                    <h3 class="brand-name">Red Premium</h3>
+                    <p class="brand-category">Economy Plywood</p>
+                </div>
+                <div class="leaf-decoration"></div>
             </a>
         </div>
     </section>
     <!--    BRANDS END-->
 
-
-    <div class="heading" ><h2>Tools for <span style="color: teal;">Dream Spaces</span></h2></div>
-    <section class="products-section">
-        <div class="products-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="assests/calculator.webp" alt="Calculator" height="50%" width="-50%">
-                <h3>Calculator</h3>
-                <p>Save time, reduce waste, and ensure precise measurements!"</p>
-                <a href="#" class="read-more">Read More →</a>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="assests/visualizer.webp" alt="Visualizer" height="100%" width="100%">
-                <h3>Visualizer</h3>
-                <p>Explore designs effortlessly and make confident choices for your project!"</p>
-                <a href="#" class="read-more">Read More →</a>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="assests/color card.webp" alt="color card" height="100%" width="100%">
-                <h3>Shade Card</h3>
-                <p>perfect shade to match your design vision effortlessly</p>
-                <a href="#" class="read-more">Read More →</a>
-            </div>
-        </div>
-    </section>
 
 
     <section class="why-choose-us">
@@ -226,105 +337,228 @@
 
 
     <!--    Footer start    -->
-    <footer class="si-footer">
-        <div class="si-footer-container">
-            <!-- About Section -->
-            <div class="si-footer-section">
-                <h3>About Us</h3>
-                <p>SI Industries is a leading manufacturer of plywood and related products. We deliver quality and innovation to your homes and offices.</p>
-            </div>
+    <div id="footer-placeholder"></div>
 
-            <!-- Social Media Links -->
-            <div class="si-footer-section">
-                <h3>Follow Us</h3>
-                <div class="si-social-icons">
-                    <a href="https://www.instagram.com" target="_blank" title="Instagram" class="si-social-icon instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    </a>
-                    <a href="https://www.facebook.com" target="_blank" title="Facebook" class="si-social-icon facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                    </a>
-                    <a href="https://wa.me" target="_blank" title="WhatsApp" class="si-social-icon whatsapp">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="si-footer-section">
-                <h3>Quick Links</h3>
-                <div class="si-footer-links">
-                    <a href="service.html">Our Services</a>
-                    <a href="product.html">Products</a>
-                    <a href="Contact us.html">Contact Us</a>
-                    <a href="Faq.html">FAQ</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="si-footer-bottom">
-            <p>&copy; 2025 SI Industries. All Rights Reserved.</p>
-        </div>
-    </footer>
-    <!--    FOOTER END      -->
+    <!--    FOOTER ENDS     -->
 
     <script>
+
+        // Load the header
+        fetch('/Header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            });
         //  **********SLIDER START *************//
         document.addEventListener('DOMContentLoaded', function() {
             const slider = document.getElementById('homeSlider');
-            const dotsContainer = document.getElementById('homeSliderDots');
-            const totalSlides = slider.children.length;
+            const slides = slider.querySelectorAll('.home-slider-item');
+            const dotsContainer = document.getElementById('sliderDots');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
 
-            // Clone first few images for smooth infinite loop
-            const firstSlides = Array.from(slider.children).slice(0, 3);
-            firstSlides.forEach(slide => {
-                const clone = slide.cloneNode(true);
-                slider.appendChild(clone);
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.className = 'home-slider-dot' + (index === 0 ? ' active' : '');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
             });
 
-            // Create navigation dots
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('div');
-                dot.classList.add('home-slider-dot');
-                if (i === 0) dot.classList.add('active');
-                
-                dot.addEventListener('click', () => {
-                    // Calculate position to slide to
-                    const position = -i * 100;
-                    slider.style.transform = `translateX(${position}%)`;
-                    slider.style.animation = 'none';
-                    
-                    // Update active dot
-                    document.querySelectorAll('.home-slider-dot').forEach((d, index) => {
-                        d.classList.toggle('active', index === i);
-                    });
+            // Initialize first slide animations
+            animateSlideText(0);
 
-                    // Resume animation after a brief pause
+            // Navigation Functions
+            function goToSlide(index) {
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+
+                // Update slides
+                slides[currentSlide].classList.remove('active');
+                slides[index].classList.add('active');
+
+                // Update dots
+                const dots = dotsContainer.querySelectorAll('.home-slider-dot');
+                dots[currentSlide].classList.remove('active');
+                dots[index].classList.add('active');
+
+                currentSlide = index;
+                animateSlideText(index);
+            }
+
+            function animateSlideText(index) {
+                // Reset all text animations
+                document.querySelectorAll('.home-slider-text-animation').forEach(elem => {
+                    elem.classList.remove('active');
+                });
+
+                // Animate current slide text
+                const textElements = slides[index].querySelectorAll('.home-slider-text-animation');
+                textElements.forEach((elem, i) => {
                     setTimeout(() => {
-                        slider.style.animation = 'homeSliderSlide 35s infinite linear';
-                        slider.style.animationDelay = `${-i * 5}s`;
-                    }, 20);
+                        elem.classList.add('active');
+                    }, i * 200);
                 });
+            }
+
+            // Navigation zone click handlers
+            document.getElementById('prevZone').addEventListener('click', () => {
+                goToSlide(currentSlide - 1);
+            });
+
+            document.getElementById('nextZone').addEventListener('click', () => {
+                goToSlide(currentSlide + 1);
+            });
+
+            // Touch support
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            slider.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            slider.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
                 
-                dotsContainer.appendChild(dot);
-            }
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        goToSlide(currentSlide + 1);
+                    } else {
+                        goToSlide(currentSlide - 1);
+                    }
+                }
+            });
 
-            // Update active dot based on current slide position
-            function updateActiveDot() {
-                const position = -slider.getBoundingClientRect().left / window.innerWidth;
-                const index = Math.round(position) % totalSlides;
-                document.querySelectorAll('.home-slider-dot').forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                });
-            }
+            // Auto-advance slides
+            let autoSlideInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 5000);
 
-            // Update active dot periodically
-            setInterval(updateActiveDot, 1000);
+            // Pause auto-sliding when user interacts with the slider
+            slider.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                autoSlideInterval = setInterval(() => {
+                    goToSlide(currentSlide + 1);
+                }, 5000);
+            });
         });
 
 
 //*****************     SLIDER END*************//
+
+//******************    VIDEO SCRIPT    *********//
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtubeVideo', {
+        events: {
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+        document.getElementById('videoOverlay').classList.add('hidden');
+    }
+    if (event.data == YT.PlayerState.ENDED) {
+        document.getElementById('videoOverlay').classList.remove('hidden');
+    }
+}
+
+// Add click handler to video container
+document.getElementById('videoContainer').addEventListener('click', function() {
+    player.playVideo();
+    document.getElementById('videoOverlay').classList.add('hidden');
+});
+
+//******************    VIDEO END **************//
+
+//*****************     PRODUCT SECTION **********//
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.product-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+    
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(50px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+    });
+});
+
+// Add click handler for product cards
+document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('click', function(e) {
+        if (e.target.classList.contains('read-more') || e.target.parentElement.classList.contains('read-more')) {
+            // Don't prevent default for the "Read More" link
+            return;
+        }
+        const link = this.querySelector('.read-more').getAttribute('href');
+        window.location.href = link;
+    });
+});
+
+//****************      PRODUCT ENDS    ******************//
+
+//*******************       BRANDS *********************//
+document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.brand-card');
+        
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '50px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    });
+
+//**************        BRANDS ENDS ***************//
+
+//***************       Footer start ***************//
+fetch('footer.html')
+.then(response => response.text())
+.then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+})
+.catch(error => {
+    console.error('Error loading footer:', error);
+});
+
+//*************     footer ends ****************//
 
 function loadPopup() {
             fetch('popup.html')
@@ -346,7 +580,7 @@ function loadPopup() {
             loadPopup();
 
             // Set interval to open popup every 30 seconds
-            setInterval(loadPopup, 30000);
+            setInterval(loadPopup, 70000);
         };
     </script>
 </body>

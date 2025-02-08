@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Nice Ply - Marine Grade Plywood</title>
     <!-- All previous CSS styles remain exactly the same -->
     <style>
@@ -13,13 +15,16 @@
     </style>
 </head>
 <body>
+
+    <div id="header-container"></div>
+
     <div class="container">
         <main class="main-content">
             <h1>Marine Grade Plywood</h1>
             <p>Experience the ultimate in water-resistant plywood technology with Nice Ply's premium marine-grade solutions. Engineered specifically for high-moisture environments, our marine plywood combines exceptional durability with superior craftsmanship to deliver unmatched performance in marine and outdoor applications.</p>
             
             <div class="image-container">
-                <img src="assests/marineply.jpeg" alt="Premium Marine Grade Plywood" class="product-image" onclick="openLightbox(this)">
+                <img src="assests/marine.jpg" alt="Premium Marine Grade Plywood" class="product-image" onclick="openLightbox(this)">
             </div>
             
             <div class="features">
@@ -61,6 +66,8 @@
         </aside>
     </div>
 
+    <div id="footer-placeholder"></div>
+    
     <!-- Lightbox container -->
     <div class="lightbox" onclick="closeLightbox()">
         <span class="close-lightbox">&times;</span>
@@ -69,6 +76,14 @@
 
     <!-- Previous JavaScript remains exactly the same -->
     <script>
+
+                fetch('/Header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                });
+    
+
               // Function to open lightbox
               function openLightbox(img) {
             const lightbox = document.querySelector('.lightbox');
@@ -97,6 +112,19 @@
         document.querySelector('.lightbox img').addEventListener('click', function(e) {
             e.stopPropagation();
         });
+
+                //FOOTER 
+    
+                fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading footer:', error);
+                });
+        
+                //Footer end
     </script>
 </body>
 </html>

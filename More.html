@@ -5,125 +5,446 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Header.css">
     <link rel="stylesheet" href="footer.css">
-    <title>More Bar</title>
+    <title>More - SI Industries</title>
     <style>
-        /* General Styling */
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
+        :root {
+            --primary-dark: #0B4619;   /* Dark green from logo */
+            --primary-light: #4CAF50;  /* Light green from logo */
+            --accent-green: #2E7D32;   /* Medium green for accents */
+            --bg-light: #F1F8E9;       /* Very light green background */
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--bg-light);
+        }
+
         .banner {
-            background: url('assests/moreBG.webp') no-repeat center center/cover;
+            background: linear-gradient(rgba(11, 70, 25, 0.8), rgba(11, 70, 25, 0.8)), url('assests/moreBG.webp');
+            background-position: center;
+            background-size: cover;
             color: white;
             text-align: center;
-            padding: 5em 1em;
+            padding: 6em 1em;
+            position: relative;
         }
+
         .banner h2 {
-            margin: 0.5em 0;
+            font-size: 3em;
+            margin: 0;
+            margin-bottom: 0.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
+
+        .banner p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         .content-section {
             max-width: 1200px;
-            margin: 2em auto;
-            padding: 1em;
+            margin: 4em auto;
+            padding: 2em;
             text-align: center;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(11, 70, 25, 0.1);
         }
+
         .content-section h2 {
-            color: teal;
+            color: var(--primary-dark);
             font-size: 2.5em;
             margin-bottom: 1em;
+            position: relative;
         }
-        .temp{
-            font-size: 1.5em;
+
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-light);
         }
+
+        .temp {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+        }
+
         .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 2em 0;
-        }
-        .stat {
-            background-color: teal;
-            text-align: center;
-        }
-        .stat h3 {
-            margin: 0.5em 0;
-            color: teal;
-        }
-        .contact-section {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2em;
+            padding: 2em;
             max-width: 1200px;
-            margin: 2em auto;
-            padding: 1em;
-            background-color: #f4f4f4;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
         }
-        .contact-form, .contact-info {
-            flex: 1;
-            margin: 1em;
+
+        .stat {
+            background: linear-gradient(135deg, var(--primary-dark), var(--accent-green));
+            padding: 2em;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(11, 70, 25, 0.1);
+            transition: transform 0.3s ease;
         }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat h3 {
+            color: white;
+            font-size: 2.5em;
+            margin: 0;
+            margin-bottom: 0.3em;
+        }
+
+        .stat p {
+            color: white;
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+            max-width: 1200px;
+            margin: 4em auto;
+            padding: 2em;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(11, 70, 25, 0.1);
+        }
+
+        .contact-form h3, .contact-info h3 {
+            color: var(--primary-dark);
+            font-size: 1.8em;
+            margin-bottom: 1em;
+        }
+
         .contact-form form {
             display: flex;
             flex-direction: column;
+            gap: 1em;
         }
-        .contact-form input, .contact-form textarea, .contact-form button {
-            margin: 0.5em 0;
-            padding: 0.8em;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+
+        .contact-form input, 
+        .contact-form textarea {
+            padding: 1em;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.3s ease;
         }
+
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            border-color: var(--primary-light);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
         .contact-form button {
-            background-color: teal;
+            background: var(--primary-dark);
             color: white;
+            padding: 1em;
             border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-        .stat h3{
-            color: white;
+
+        .contact-form button:hover {
+            background: var(--accent-green);
+            transform: translateY(-2px);
         }
-        .stat p{
-            color: white;
+
+        .contact-info p {
+            margin: 1em 0;
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .stats {
+                padding: 1em;
+                gap: 1em;
+            }
+
+            .content-section,
+            .contact-section {
+                margin: 2em 1em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+
+            .banner h2 {
+                font-size: 2.5em;
+            }
+
+            .content-section h2 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .banner {
+                padding: 4em 1em;
+            }
+
+            .banner h2 {
+                font-size: 2em;
+            }
+
+            .content-section {
+                padding: 1.5em;
+            }
+
+            .stat {
+                padding: 1.5em;
+            }
+
+            .contact-section {
+                padding: 1.5em;
+            }
+
+            .temp {
+                font-size: 1em;
+            }
+        }
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+            max-width: 1200px;
+            margin: 4em auto;
+            padding: 0 2em;
+        }
+        .mission-vision p{
+            color: #2E7D32;
+        }
+        .feature-icon p{
+            color: #2E7D32;
+        }
+
+        .mission-card, .vision-card {
+            background: white;
+            padding: 2em;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(11, 70, 25, 0.1);
+            text-align: center;
+        }
+
+        .mission-card h3, .vision-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.8em;
+            margin-bottom: 1em;
+            position: relative;
+        }
+
+        .mission-card h3::after, .vision-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2em;
+            max-width: 1200px;
+            margin: 4em auto;
+            padding: 0 2em;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2em;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(11, 70, 25, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            margin: 0 auto 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-size: 1.5em;
+        }
+
+        .certifications {
+            background: white;
+            max-width: 1200px;
+            margin: 4em auto;
+            padding: 2em;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(11, 70, 25, 0.1);
+        }
+
+        .certifications h3 {
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 2em;
+            font-size: 1.8em;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2em;
+            text-align: center;
+        }
+
+        .cert-item {
+            padding: 1em;
+        }
+
+        .cert-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1em;
+        }
+
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+            
+            .cert-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header class="main-header">
-        <div class="header-logo">
-            <img src="assests/silogo.png" alt="SI Industries Logo">
-        </div>
-        <nav class="main-nav">
-            <ul>
-                <div class="search-container">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search..." aria-label="Search">
-                        <button type="submit">
-                            <svg viewBox="0 0 24 24" width="18" height="18">
-                                <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="product.html">Products</a></li>
-                <li><a href="tools.html">Tools</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="Contact us.html">Contact us</a></li>
-                <li><a href="#">More</a></li>
-            </ul>
-        </nav>        
-      </header>
-
+    
+    <div id="header-container"></div>
 
     <div class="banner">
         <h2>About Us</h2>
         <p>15 Years of Excellence in the Woodworking Industry</p>
     </div>
+
     <section class="content-section">
-        <h2>Welcome to SI Industries</h2>
-        <p  class="temp">At SI Industries, we take pride in providing high-quality plywood products that meet the demands of our customers. With over 15 years of experience, our commitment to quality and innovation ensures every product is durable and reliable.</p>
+        <h2 style="color: #0B4619;">Welcome to SI Industries</h2>
+        <p class="temp" style="color: #2E7D32;">Established in 2008, SI Industries has grown to become one of India's leading manufacturers of premium plywood, flush doors, and blockboards. Our state-of-the-art manufacturing facilities, combined with rigorous quality control processes, ensure that every product meets international standards of excellence. We serve both residential and commercial sectors, providing innovative solutions for modern construction and interior needs.</p>
     </section>
+
+    <section class="mission-vision">
+        <div class="mission-card">
+            <h3>Our Mission</h3>
+            <p>To provide superior quality wood products that exceed customer expectations while maintaining environmental responsibility. We strive to be the most trusted name in the plywood industry through continuous innovation and sustainable practices.</p>
+        </div>
+        <div class="vision-card">
+            <h3>Our Vision</h3>
+            <p>To become India's leading wood products manufacturer by 2030, setting new industry standards for quality, sustainability, and customer satisfaction while contributing to the nation's economic growth.</p>
+        </div>
+    </section>
+
+    <section class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🌳</div>
+            <h3 style="color:rgba(11, 70, 25, 0.8);">Sustainable Sourcing</h3>
+            <p style="color: #2E7D32;">All our wood is sourced from certified sustainable forests and plantations, ensuring environmental responsibility.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3 style="color:rgba(11, 70, 25, 0.8);">Quality Control</h3>
+            <p style="color: #2E7D32;">Rigorous testing at every stage of production ensures premium quality and durability of all products.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏭</div>
+            <h3 style="color:rgba(11, 70, 25, 0.8);">Modern Manufacturing</h3>
+            <p style="color: #2E7D32;">State-of-the-art facilities with advanced technology for precise and efficient production.</p>
+        </div>
+    </section>
+
+    <section class="certifications">
+        <h3 style="color:rgba(11, 70, 25, 0.8);">Our Certifications</h3>
+        <div class="cert-grid">
+            <div class="cert-item">
+                <h4>ISO 9001:2015</h4>
+                <p style="color: #2E7D32;">Quality Management System</p>
+            </div>
+            <div class="cert-item">
+                <h4>Green Pro</h4>
+                <p style="color: #2E7D32;">Environmental Certification</p>
+            </div>
+            <div class="cert-item">
+                <h4>BIS Certified</h4>
+                <p style="color: #2E7D32;">Bureau of Indian Standards</p>
+            </div>
+            <div class="cert-item">
+                <h4>CE Marked</h4>
+                <p style="color: #2E7D32;">European Conformity</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous stats section -->
     <section class="stats">
         <div class="stat">
             <h3>15+</h3>
@@ -142,70 +463,29 @@
             <p>Dedicated Professionals</p>
         </div>
     </section>
-    <section class="contact-section">
-        <div class="contact-form">
-            <h3>Request a Quote</h3>
-            <form>
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <input type="text" placeholder="Subject" required>
-                <textarea placeholder="Message" rows="5" required></textarea>
-                <button type="submit">Send Inquiry</button>
-            </form>
-        </div>
-        <div class="contact-info">
-            <h3>Contact Information</h3>
-            <p><strong>Phone:</strong> +91 99971 57020</p>
-            <p><strong>Email:</strong> info@siindustriesindia.com</p>
-            <p>Reach out to us from 9:00 AM to 5:00 PM, Monday to Friday. We are here to assist you.</p>
-        </div>
-    </section>
 
+    <!-- Footer content remains the same -->
+    <div id="footer-placeholder"></div>
 
-    <!--    Footer start    -->
-    <footer class="si-footer">
-        <div class="si-footer-container">
-            <!-- About Section -->
-            <div class="si-footer-section">
-                <h3>About Us</h3>
-                <p>SI Industries is a leading manufacturer of plywood and related products. We deliver quality and innovation to your homes and offices.</p>
-            </div>
+    <script>
 
-            <!-- Social Media Links -->
-            <div class="si-footer-section">
-                <h3>Follow Us</h3>
-                <div class="si-social-icons">
-                    <a href="https://www.instagram.com" target="_blank" title="Instagram" class="si-social-icon instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    </a>
-                    <a href="https://www.facebook.com" target="_blank" title="Facebook" class="si-social-icon facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                    </a>
-                    <a href="https://wa.me" target="_blank" title="WhatsApp" class="si-social-icon whatsapp">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                    </a>
-                </div>
-            </div>
+fetch('/Header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            });
 
-            <!-- Quick Links -->
-            <div class="si-footer-section">
-                <h3>Quick Links</h3>
-                <div class="si-footer-links">
-                    <a href="service.html">Our Services</a>
-                    <a href="product.html">Products</a>
-                    <a href="Contact us.html">Contact Us</a>
-                    <a href="Faq.html">FAQ</a>
-                </div>
-            </div>
-        </div>
+//***************       Footer start ***************//
+fetch('footer.html')
+.then(response => response.text())
+.then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+})
+.catch(error => {
+    console.error('Error loading footer:', error);
+});
 
-        <!-- Footer Bottom -->
-        <div class="si-footer-bottom">
-            <p>&copy; 2025 SI Industries. All Rights Reserved.</p>
-        </div>
-    </footer>
-    <!--    FOOTER END      -->
-
-
+//*************     footer ends ****************//
+    </script>
 </body>
 </html>
